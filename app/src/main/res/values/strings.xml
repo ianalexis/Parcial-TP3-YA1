@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Parcial_TP3_YA1</string>
+    <string name="string_explore">Explore</string>
+    <string name="string_search">Search</string>
+    <string name="string_offers">Offers</string>
+    <string name="string_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
