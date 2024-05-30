@@ -4,26 +4,26 @@
 
     <item
         android:id="@+id/explore"
-        android:icon="@drawable/noun_dog_1022985"
+
         android:iconTint="#FFFFFF"
         android:title="@string/string_explore" />
 
     <item
         android:id="@+id/search"
-        android:icon="@drawable/noun_bone_6843350"
+
         android:iconTint="#FFFFFF"
         android:title="@string/string_search" />
 
 
     <item
         android:id="@+id/offers"
-        android:icon="@drawable/noun_vet_6531783"
+
         android:iconTint="#FFFFFF"
         android:title="@string/string_offers" />
 
     <item
         android:id="@+id/profile"
-        android:icon="@drawable/noun_vet_6531783"
+
         android:iconTint="#FFFFFF"
         android:title="@string/string_profile"/>
 

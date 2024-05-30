@@ -26,18 +26,14 @@ class Explore : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_explore, container, false)
+        this.view = inflater.inflate(R.layout.fragment_explore, container, false)
+        this.rvDestinations = view.findViewById(R.id.explore_rv_destinations)
+        this.rvOffers = view.findViewById(R.id.explore_rv_offers)
+        this.button = view.findViewById(R.id.explore_button)
 
-        rvDestinations = view.findViewById(R.id.explore_rv_destinations)
-        rvOffers = view.findViewById(R.id.explore_rv_offers)
-        button = view.findViewById(R.id.explore_button)
-
-        return view
+        return this.view
     }
 
     override fun onStart(){
