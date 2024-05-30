@@ -3,7 +3,7 @@ package com.example.parcial_tp3_ya1.entities
 import android.os.Parcel
 import android.os.Parcelable
 
-class Destination (city : String, country : String, code : String, image : String, desc : String, photos : Array<String>, price : String ) : Parcelable {
+class Destination(city: String?, country: String?, code: String?, image: String?, desc: String?, photos: Array<String>?, price: String? ) : Parcelable {
 
     var city : String?
     var country : String?
@@ -14,15 +14,13 @@ class Destination (city : String, country : String, code : String, image : Strin
     var price : String?
 
     constructor(parcel: Parcel) : this(
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.createStringArray()!!,
-        parcel.readString().toString(),
-
-
+        parcel.readString(),
     ) {
     }
     init {
@@ -48,6 +46,7 @@ class Destination (city : String, country : String, code : String, image : Strin
         parcel.writeStringArray(photos)
         parcel.writeString(price)
     }
+
 
     override fun describeContents(): Int {
         return 0
