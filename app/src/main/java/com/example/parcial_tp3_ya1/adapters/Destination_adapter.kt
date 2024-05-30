@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
+import com.example.parcial_tp3_ya1.entities.Destination
 import com.example.parcial_tp3_ya1.holders.Destination_holder
 import com.example.parcial_tp3_ya1.providers.Destination_Provider
 
@@ -16,15 +17,10 @@ class Destination_adapter (var destinationList: List<Destination>) : RecyclerVie
 
     override fun onBindViewHolder(holder: Destination_holder, position: Int) {
         val destination = destinationList[position]
-        holder.setCity(destination.city)
-        holder.setCountry(destination.country)
-        holder.setCode(destination.code)
-        holder.setImagen(destination.image)
+        holder.render(destination)
     }
 
     override fun getItemCount(): Int {
         return destinationList.size
     }
-
-    class Destination
 }
