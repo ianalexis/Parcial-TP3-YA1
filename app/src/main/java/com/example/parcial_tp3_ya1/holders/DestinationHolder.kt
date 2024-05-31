@@ -1,6 +1,7 @@
 package com.example.parcial_tp3_ya1.holders
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.example.parcial_tp3_ya1.entities.DestinationEntitie
 
 class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
     private var view: View
+
 
     val country = view.findViewById<TextView>(R.id.card_dest_country)
     val city = view.findViewById<TextView>(R.id.card_dest_city)
