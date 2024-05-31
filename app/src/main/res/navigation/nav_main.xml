@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/destinationDetail"
-        android:name="com.example.parcial_tp3_ya1.fragments.DestinationDetail"
+        android:name="com.example.parcial_tp3_ya1.fragments.DestinationDetailFragment"
         android:label="fragment_destination_detail"
         tools:layout="@layout/fragment_destination_detail" >
         <argument

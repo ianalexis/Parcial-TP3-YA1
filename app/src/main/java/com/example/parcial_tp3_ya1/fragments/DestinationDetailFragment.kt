@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
-import com.example.parcial_tp3_ya1.adapters.DestinationAdapter
-import com.example.parcial_tp3_ya1.providers.DestinationProvider
 
-class DestinationDetail : Fragment() {
+class DestinationDetailFragment : Fragment() {
 
     lateinit var vista : View
     lateinit var txtCity : TextView
@@ -47,7 +44,7 @@ class DestinationDetail : Fragment() {
 
     override fun onStart(){
         super.onStart()
-        val destination = DestinationDetailArgs.fromBundle(requireArguments()).destination
+        val destination = DestinationDetailFragmentArgs.fromBundle(requireArguments()).destination
 
         txtCity.text = destination.city
         txtCountry.text = destination.country
@@ -65,7 +62,7 @@ class DestinationDetail : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            DestinationDetail().apply {
+            DestinationDetailFragment().apply {
                 arguments = Bundle().apply {
 
                 }
