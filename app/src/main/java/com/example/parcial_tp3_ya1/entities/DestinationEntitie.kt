@@ -34,10 +34,7 @@ class DestinationEntitie(city: String?, country: String?, code: String?, image: 
 
 
     }
-    override fun toString(): String {
-        return "PerritoModel(city='$city', country='$country', code='$code', image='$image', desc='$desc', photos='$photos', price='$price')"
-    }
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
+      override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(city)
         parcel.writeString(country)
         parcel.writeString(code)
