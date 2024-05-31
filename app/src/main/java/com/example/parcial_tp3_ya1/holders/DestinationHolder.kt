@@ -10,7 +10,6 @@ import com.example.parcial_tp3_ya1.entities.DestinationEntitie
 
 class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
     private var view: View
-   // val button: Button = view.findViewById(R.id.item_perrito_cell_button)
 
     val country = view.findViewById<TextView>(R.id.card_dest_country)
     val city = view.findViewById<TextView>(R.id.card_dest_city)
@@ -26,29 +25,4 @@ class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
         code.text = model.code
         Glide.with(view).load(model.image).into(image)
     }
-
-
-    /*   fun setCity (city: String) {
-           val textView = view.findViewById<TextView>(R.id.card_dest_city)
-           textView.text = city
-       }
-
-       fun setCountry (country: String) {
-           val textView = view.findViewById<TextView>(R.id.card_dest_country)
-           textView.text = country
-       }
-
-       fun setImagen (imagen: String) {
-           val imageView = view.findViewById<ImageView>(R.id.card_dest_image)
-           Glide.with(view).load(imagen).into(imageView)
-       }
-       fun setCode (code: String) {
-           val textView = view.findViewById<TextView>(R.id.card_dest_code)
-           textView.text = code
-       }
-
-
-       fun getCardDestination(): View {
-           return view.findViewById(R.id.cardItemPerritoCell)
-       }*/
 }
