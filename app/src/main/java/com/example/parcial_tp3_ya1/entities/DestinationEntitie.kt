@@ -3,7 +3,7 @@ package com.example.parcial_tp3_ya1.entities
 import android.os.Parcel
 import android.os.Parcelable
 
-class Destination(city: String?, country: String?, code: String?, image: String?, desc: String?, photos: Array<String>?, price: String? ) : Parcelable {
+class DestinationEntitie(city: String?, country: String?, code: String?, image: String?, desc: String?, photos: Array<String>?, price: String? ) : Parcelable {
 
     var city : String?
     var country : String?
@@ -52,12 +52,12 @@ class Destination(city: String?, country: String?, code: String?, image: String?
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Destination> {
-        override fun createFromParcel(parcel: Parcel): Destination {
-            return Destination(parcel)
+    companion object CREATOR : Parcelable.Creator<DestinationEntitie> {
+        override fun createFromParcel(parcel: Parcel): DestinationEntitie {
+            return DestinationEntitie(parcel)
         }
 
-        override fun newArray(size: Int): Array<Destination?> {
+        override fun newArray(size: Int): Array<DestinationEntitie?> {
             return arrayOfNulls(size)
         }
     }

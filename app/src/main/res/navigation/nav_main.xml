@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/explore"
-        android:name="com.example.parcial_tp3_ya1.fragments.Explore"
+        android:name="com.example.parcial_tp3_ya1.fragments.ExploreFragment"
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" />
     <fragment
         android:id="@+id/offers"
-        android:name="com.example.parcial_tp3_ya1.fragments.Offers"
+        android:name="com.example.parcial_tp3_ya1.fragments.OffersFragment"
         android:label="fragment_offers"
         tools:layout="@layout/fragment_offers" />
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.parcial_tp3_ya1.fragments.Profile"
+        android:name="com.example.parcial_tp3_ya1.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/search"
-        android:name="com.example.parcial_tp3_ya1.fragments.Search"
+        android:name="com.example.parcial_tp3_ya1.fragments.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 </navigation>
