@@ -47,6 +47,16 @@ class DestinationDetail : Fragment() {
 
     override fun onStart(){
         super.onStart()
+        val destination = DestinationDetailArgs.fromBundle(requireArguments()).destination
+
+        txtCity.text = destination.city
+        txtCountry.text = destination.country
+        txtPrice.text = destination.price
+        txtCode.text = destination.code
+        txtDesc.text = destination.desc
+
+        //val nombre = PerritoDetalleArgs.fromBundle(requireArguments()).Perrito.name
+        //title.text = nombre.toString()
 
 
         //

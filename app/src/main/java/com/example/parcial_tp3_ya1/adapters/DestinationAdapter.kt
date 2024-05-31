@@ -2,6 +2,7 @@ package com.example.parcial_tp3_ya1.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.entities.DestinationEntitie
@@ -17,6 +18,8 @@ class DestinationAdapter (var destinationEntitieList: List<DestinationEntitie>) 
     override fun onBindViewHolder(holder: DestinationHolder, position: Int) {
         val destination = destinationEntitieList[position]
         holder.render(destination)
+
+
 
     }
 
