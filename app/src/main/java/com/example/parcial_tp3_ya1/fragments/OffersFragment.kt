@@ -5,56 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
+import com.example.parcial_tp3_ya1.adapters.OffersDetailAdapter
+import com.example.parcial_tp3_ya1.providers.OffersProvider
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [OffersFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class OffersFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    lateinit var view1 : View
+    lateinit var rvOffers: RecyclerView
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_offers, container, false)
+        this.view1 = inflater.inflate(R.layout.fragment_offers, container, false)
+        this.rvOffers = view1.findViewById(R.id.offers_rv)
+        return this.view1
+    }
+
+    override fun onStart(){
+        super.onStart()
+
+        //offers
+        rvOffers.setHasFixedSize(true)
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        rvOffers.layoutManager = linearLayoutManager
+
+        val offersDetailAdapter = OffersDetailAdapter(OffersProvider.offersEntitieLists)
+        rvOffers.adapter = offersDetailAdapter
+
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Offers.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OffersFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
     }
 }
