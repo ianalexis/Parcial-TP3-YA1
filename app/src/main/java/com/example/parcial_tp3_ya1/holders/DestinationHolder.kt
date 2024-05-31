@@ -1,17 +1,14 @@
 package com.example.parcial_tp3_ya1.holders
 
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.parcial_tp3_ya1.R
-import com.example.parcial_tp3_ya1.entities.Destination
-import org.w3c.dom.Text
+import com.example.parcial_tp3_ya1.entities.DestinationEntitie
 
-class Destination_holder (view: View): RecyclerView.ViewHolder(view) {
+class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
     private var view: View
    // val button: Button = view.findViewById(R.id.item_perrito_cell_button)
 
@@ -23,13 +20,11 @@ class Destination_holder (view: View): RecyclerView.ViewHolder(view) {
     init {
         this.view = view
     }
-    fun render(model : Destination){
+    fun render(model : DestinationEntitie){
         country.text = model.country
         city.text = model.city
         code.text = model.code
-
-        // Cargar imagen
-        Glide.with(image.context).load(model.image).into(image)
+        Glide.with(view).load(model.image).into(image)
     }
 
 

@@ -9,16 +9,17 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
-import com.example.parcial_tp3_ya1.adapters.Destination_adapter
-import com.example.parcial_tp3_ya1.holders.Destination_holder
-import com.example.parcial_tp3_ya1.providers.Destination_Provider
+import com.example.parcial_tp3_ya1.adapters.DestinationAdapter
+import com.example.parcial_tp3_ya1.providers.DestinationProvider
+import com.example.parcial_tp3_ya1.providers.MainDestinationProvider
 
 
-class Explore : Fragment() {
+class ExploreFragment : Fragment() {
 
     lateinit var view1 : View
     lateinit var rvDestinations : RecyclerView
     lateinit var rvOffers: RecyclerView
+    lateinit var rvMainDestinations: RecyclerView
     lateinit var button : Button
 
 
@@ -32,8 +33,9 @@ class Explore : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         // Inflate the layout for this fragment
         this.view1 = inflater.inflate(R.layout.fragment_explore, container, false)
-        this.rvDestinations = view1.findViewById(R.id.explore_rv_destinations)
-        this.rvOffers = view1.findViewById(R.id.explore_rv_offers)
+        this.rvDestinations = view1.findViewById(R.id.explore_rv_offers)
+        this.rvOffers = view1.findViewById(R.id.explore_rv_destinations)
+        this.rvMainDestinations = view1.findViewById(R.id.explore_rv_maindestinations)
         this.button = view1.findViewById(R.id.explore_button)
 
         return this.view1
@@ -46,8 +48,11 @@ class Explore : Fragment() {
        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rvDestinations.layoutManager = linearLayoutManager
         
-        val destination_adapter = Destination_adapter(Destination_Provider.destinationList)
-        rvDestinations.adapter = destination_adapter
+        val destinationAdapter = DestinationAdapter(DestinationProvider.destinationEntitieLists)
+        rvDestinations.adapter = destinationAdapter
+
+        val mainDestinationAdapter = DestinationAdapter(MainDestinationProvider.mainDestinationListEntities)
+        rvMainDestinations.adapter = mainDestinationAdapter
 
     }
 
