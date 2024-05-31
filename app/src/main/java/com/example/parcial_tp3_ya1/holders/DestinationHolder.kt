@@ -13,6 +13,9 @@ class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
     private var view: View
 
 
+    var boton = view.findViewById<Button>(R.id.card_dest_btn)
+
+
     val country = view.findViewById<TextView>(R.id.card_dest_country)
     val city = view.findViewById<TextView>(R.id.card_dest_city)
     val image = view.findViewById<ImageView>(R.id.card_dest_image)
@@ -26,5 +29,9 @@ class DestinationHolder (view: View): RecyclerView.ViewHolder(view) {
         city.text = model.city
         code.text = model.code
         Glide.with(view).load(model.image).into(image)
+
+        boton.setOnClickListener{
+            val action = ExplorerDirections.action
+        }
     }
 }
