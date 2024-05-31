@@ -16,8 +16,6 @@ class OffersFragment : Fragment() {
     lateinit var view1 : View
     lateinit var rvOffers: RecyclerView
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

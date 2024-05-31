@@ -9,7 +9,11 @@
         android:id="@+id/explore"
         android:name="com.example.parcial_tp3_ya1.fragments.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_explore_to_destinationDetail"
+            app:destination="@id/destinationDetail" />
+    </fragment>
     <fragment
         android:id="@+id/offers"
         android:name="com.example.parcial_tp3_ya1.fragments.OffersFragment"
@@ -25,4 +29,13 @@
         android:name="com.example.parcial_tp3_ya1.fragments.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/destinationDetail"
+        android:name="com.example.parcial_tp3_ya1.fragments.DestinationDetail"
+        android:label="fragment_destination_detail"
+        tools:layout="@layout/fragment_destination_detail" >
+        <argument
+            android:name="destination"
+            app:argType="com.example.parcial_tp3_ya1.entities.DestinationEntitie" />
+    </fragment>
 </navigation>
