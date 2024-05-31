@@ -5,7 +5,7 @@ import com.example.parcial_tp3_ya1.entities.OffersEntitie
 
 class OffersProvider {
     companion object {
-        val OffersEntitieLists = listOf<OffersEntitie>(
+        val offersEntitieLists = listOf<OffersEntitie>(
             OffersEntitie(
                 "https://www.figma.com/file/3fpcDil0eOVslxFzD2S5hP/image/c170cfebb32112aa4cb8c4dc3daa1093bf0bb7d2",
                 "20% discount for mastercard users",
