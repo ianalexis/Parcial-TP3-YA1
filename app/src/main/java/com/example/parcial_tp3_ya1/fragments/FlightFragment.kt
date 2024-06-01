@@ -84,8 +84,16 @@ class FlightFragment : Fragment() {
                     // El adapter de vuelos recibe la lsita de vuelos.
                    // val flightAdapter = FlightAdapter(flightResponse)
                   // flightRv.adapter = flightAdapter
-
-                    println("if")
+                    println (flightResponse.search_parameters?.arrival_id)
+                    println (flightResponse.search_parameters?.departure_id)
+                    println (flightResponse.best_flights[0].price)
+                    println (flightResponse.other_flights[0].price)
+                    println (flightResponse.best_flights[0].flights[0].travel_class + " Class") //cambiarlo por el tipo de clase buisness class
+                    println (flightResponse.best_flights[0].flights[0].airline + " Airlines")
+                    println (flightResponse.best_flights[0].airline_logo)
+                    println (flightResponse.best_flights[0].total_duration/60)
+                    println (flightResponse.best_flights[0].flights[0].arrival_airport.name)
+                    println (flightResponse.best_flights[0].flights[0].departure_airport.name)
 
                 } else {
                     // La llamada no fue exitosa, manejar el error aquí
