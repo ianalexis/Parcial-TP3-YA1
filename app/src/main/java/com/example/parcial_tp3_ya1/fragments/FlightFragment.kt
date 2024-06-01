@@ -10,14 +10,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
-import com.example.parcial_tp3_ya1.data.FlightResponse
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -86,8 +82,8 @@ class FlightFragment : Fragment() {
                     txtResultsFound.text = "$totalSize result founds"
 
                     // El adapter de vuelos recibe la lsita de vuelos.
-                  //  val flightAdapter = FlightAdapter(flightResponse)
-                //    flightRv.adapter = flightAdapter
+                   // val flightAdapter = FlightAdapter(flightResponse)
+                  // flightRv.adapter = flightAdapter
 
                     println("if")
 
