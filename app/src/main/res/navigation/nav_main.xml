@@ -38,4 +38,10 @@
             android:name="destination"
             app:argType="com.example.parcial_tp3_ya1.entities.DestinationEntitie" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.parcial_tp3_ya1.fragments.ConfiguracionFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_preference" />
 </navigation>
