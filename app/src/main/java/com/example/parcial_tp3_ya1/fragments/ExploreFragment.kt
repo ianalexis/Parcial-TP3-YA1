@@ -3,6 +3,8 @@ package com.example.parcial_tp3_ya1.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -74,6 +76,11 @@ class ExploreFragment : Fragment() {
         val offersAdapter = OffersAdapter(OffersProvider.offersEntitieLists)
         rvOffers.adapter = offersAdapter
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.toolbar_explore, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     companion object {
