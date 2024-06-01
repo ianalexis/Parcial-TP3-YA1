@@ -64,8 +64,7 @@ class FlightFragment : Fragment() {
 
         val flightService = FlightServiceApiBuilder.create()
 
-      //  val miLista = flightService.getFlights()
-
+        val miRespuesta = flightService.getFlights()
 
 
         // El adapter de vuelos recibe la lsita de vuelos.
