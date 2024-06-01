@@ -32,23 +32,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="United Airlines"
+                android:text="@string/united_airlines"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/new_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reloj"
+                android:layout_marginEnd="6dp"/>
 
             <TextView
                 android:id="@+id/card_search_txt_flight_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="01 hr 40min"
+                android:text="@string/fligth_duration"
                 android:textSize="14sp" />
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="8dp"
-            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,9 +62,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="EZE"
+                android:text="@string/origin_code"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/azul"/>
 
             <ImageView
                 android:id="@+id/flight_icon"
@@ -77,9 +79,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="LAX"
+                android:text="@string/destination_code"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                android:textColor="@color/azul"
                 android:gravity="end"/>
         </LinearLayout>
 
@@ -94,7 +97,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ezeiza Ar"
+                android:text="@string/origin_city"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -102,45 +106,74 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Los Angeles"
+                android:text="@string/destination_city"
                 android:textSize="14sp"
+                android:textColor="@color/black"
                 android:gravity="end"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            android:background="@android:color/holo_orange_light"
+            android:background="@color/grisclaro"
             android:padding="8dp"
             android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/card_search_image_chair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chair"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/card_search_class"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Business Class"
+                android:text="@string/search_class"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/card_search_txt_price"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="From $1128"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/card_search_txt_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_from"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/card_search_txt_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/card_search_bttn_view_details"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/naranja"
-            android:text="View Details"
+            android:text="@string/view_details"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
