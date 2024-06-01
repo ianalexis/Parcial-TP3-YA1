@@ -28,7 +28,11 @@
         android:id="@+id/search"
         android:name="com.example.parcial_tp3_ya1.fragments.SearchFragment"
         android:label="Search Flight"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_to_flightFragment"
+            app:destination="@id/flightFragment" />
+    </fragment>
     <fragment
         android:id="@+id/destinationDetail"
         android:name="com.example.parcial_tp3_ya1.fragments.DestinationDetailFragment"
@@ -44,4 +48,13 @@
         android:name="com.example.parcial_tp3_ya1.fragments.ConfiguracionFragment"
         android:label="@string/title_setting"
         tools:layout="@layout/fragment_preference" />
+    <fragment
+        android:id="@+id/flightFragment"
+        android:name="com.example.parcial_tp3_ya1.fragments.FlightFragment"
+        android:label="fragment_flight"
+        tools:layout="@layout/fragment_flight" >
+        <action
+            android:id="@+id/action_flightFragment_to_search"
+            app:destination="@id/search" />
+    </fragment>
 </navigation>
