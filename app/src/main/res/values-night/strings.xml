@@ -2,4 +2,5 @@
 <resources>
     <string name="title_setting">Setting</string>
     <string name="preference_category">General</string>
+    <string name="flight">Flight</string>
 </resources>
