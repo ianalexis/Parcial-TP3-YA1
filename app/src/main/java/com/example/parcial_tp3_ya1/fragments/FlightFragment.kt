@@ -6,11 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.data.FlightResponse
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -71,10 +75,12 @@ class FlightFragment : Fragment() {
 
     }
 
-    private fun loadVuelos(){
+    private fun loadVuelos() {
         val service = FlightServiceApiBuilder.create()
-        service.getFlights().enqueue(object : Callback<FlightResponse> {
-            override fun onResponse(call: Call<FlightResponse>, response: Response<FlightResponse>) {
+
+        lifecycleScope.launch {
+            try {
+                val response = withContext(Dispatchers.IO) { service.getFlights() }
                 if (response.isSuccessful) {
                     // La llamada fue exitosa, obtener la respuesta
                     val flightResponse = response.body()
@@ -82,40 +88,40 @@ class FlightFragment : Fragment() {
                     // Si la llamada fue exitosa, le vamos a pasar al provider la lista de los vuelos.
                     // a su vez, vamos a renderizar los Result Found.
 
-                    var totalVuelos = flightResponse.best_flights.size + flightResponse.other_flights.size
-                    txtResultsFound.text = totalVuelos.toString()
+                    val totalSize =
+                        flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
 
+                    txtResultsFound.text = "$totalSize result founds"
                 } else {
                     // La llamada no fue exitosa, manejar el error aquí
                     // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
                 }
+            } catch (e: Exception) {
+                // Manejar la excepción
+
             }
 
-            override fun onFailure(call: Call<FlightResponse>, t: Throwable) {
-                // La llamada falló, manejar el error aquí
-                // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
-            }
-        })
+
+        }
+
     }
-
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FlightFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FlightFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        companion object {
+            /**
+             * Use this factory method to create a new instance of
+             * this fragment using the provided parameters.
+             *
+             * @param param1 Parameter 1.
+             * @param param2 Parameter 2.
+             * @return A new instance of fragment FlightFragment.
+             */
+            // TODO: Rename and change types and number of parameters
+            @JvmStatic
+            fun newInstance(param1: String, param2: String) =
+                FlightFragment().apply {
+                    arguments = Bundle().apply {
+                        putString(ARG_PARAM1, param1)
+                        putString(ARG_PARAM2, param2)
+                    }
                 }
-            }
+        }
     }
-}
