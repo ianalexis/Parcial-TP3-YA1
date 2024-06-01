@@ -6,7 +6,7 @@
     <string name="string_profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="string_from">FROM</string>
+    <string name="string_from">From</string>
     <string name="title_profile">Profile</string>
     <string name="title_notification">Notification</string>
     <string name="title_get_help">Get Help</string>
@@ -33,4 +33,8 @@
     <string name="search_class">Business Class</string>
     <string name="price">$1128</string>
     <string name="view_details">View Details</string>
+    <string name="limited_offer">LIMITED OFFER!</string>
+    <string name="detail_offers_desc">Use your mastercard with any transaction and get 20% discount instantly!</string>
+    <string name="offers_title">Get 20% discount with your Master credit cards</string>
+
 </resources>
