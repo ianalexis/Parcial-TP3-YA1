@@ -21,4 +21,7 @@
     <string name="TrendingDestination">Trending Destination</string>
     <string name="see_all">See all</string>
     <string name="Offers">Offers</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
+    <string name="referral_code">Referral Code</string>
 </resources>
