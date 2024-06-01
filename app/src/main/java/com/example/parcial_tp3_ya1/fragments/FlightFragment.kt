@@ -92,12 +92,16 @@ class FlightFragment : Fragment() {
                         flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
 
                     txtResultsFound.text = "$totalSize result founds"
+                    println("if")
+
                 } else {
+                    println("else")
+
                     // La llamada no fue exitosa, manejar el error aquí
                     // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
                 }
             } catch (e: Exception) {
-                // Manejar la excepción
+                println("catch")
 
             }
 
