@@ -79,7 +79,7 @@ class ExploreFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.toolbar_explore, menu)
+        inflater.inflate(R.menu.drawer_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
