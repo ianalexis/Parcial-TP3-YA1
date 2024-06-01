@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
+import com.example.parcial_tp3_ya1.entities.FlightEntitie
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -85,34 +86,23 @@ class FlightFragment : Fragment() {
                    // val flightAdapter = FlightAdapter(flightResponse)
                   // flightRv.adapter = flightAdapter
 
-                    var salida = flightResponse.best_flights[0].flights?.get(0)?.departure_airport
-                    var llegada = flightResponse.best_flights[0].flights?.last()?.arrival_airport
-
-                    println ("SALIDA " + salida?.name)
-                    println("ID " + salida?.id)
-
-                    println ("LLEGADA  " + llegada?.name)
-                    println("ID " + llegada?.id)
-
-
-                    println ("From: " + flightResponse.best_flights[0].price)
-                    println (flightResponse.best_flights[0].flights?.get(0)?.travel_class + " Class") //cambiarlo por el tipo de clase buisness class
-                    println (flightResponse.best_flights[0].flights?.get(0)?.airline + " Airlines")
-                    println (flightResponse.best_flights[0].airline_logo)
 
 
 
 
 
-                    println ("Llegada : " + flightResponse.best_flights[0].flights?.last()?.arrival_airport?.name)
 
-
-                    // Como aparece en figma
-                    val totalDurationInMinutes = flightResponse.best_flights[0].total_duration
-                    val hours = totalDurationInMinutes?.div(60)?.toInt()
-                    val minutes = totalDurationInMinutes?.rem(60)
-                    println("$hours hr $minutes min")
-
+                    val listaVuelos = arrayListOf<FlightEntitie>()
+                    for (vuelo in flightResponse.best_flights){
+                        var salida = vuelo.flights?.get(0)?.departure_airport
+                        var llegada = vuelo.flights?.last()?.arrival_airport
+                        val totalDurationInMinutes = vuelo.total_duration?.div(60)
+                        val hours = totalDurationInMinutes?.div(60)?.toInt()
+                        val minutes = totalDurationInMinutes?.rem(60)
+                        var tiempo = "$hours hr $minutes min"
+                        listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
+                         }
+                            println (listaVuelos.size)
                 } else {
                     // La llamada no fue exitosa, manejar el error aquí
                     // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
