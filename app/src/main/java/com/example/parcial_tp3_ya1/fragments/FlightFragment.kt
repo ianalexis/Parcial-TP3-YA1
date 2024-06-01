@@ -9,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
-import com.example.parcial_tp3_ya1.adapters.OffersDetailAdapter
-import com.example.parcial_tp3_ya1.providers.OffersProvider
+import com.example.parcial_tp3_ya1.data.FlightResponse
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,22 +64,40 @@ class FlightFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         flightRv.layoutManager = linearLayoutManager
 
-        val flightService = FlightServiceApiBuilder.create()
-
-        val flights = flightService.getFlights()
-
-        val flightResponse = flights.body()
-
-  //      if (flightResponse != null) {
-    //       println( flightResponse.price_insights?.lowest_price)
- //       }
-
-
+        loadVuelos()
         // El adapter de vuelos recibe la lsita de vuelos.
   //      val flightAdapter = FlightAdapter(listaVuelos)
   //      flightRv.adapter = flightAdapter
 
     }
+
+    private fun loadVuelos(){
+        val service = FlightServiceApiBuilder.create()
+        service.getFlights().enqueue(object : Callback<FlightResponse> {
+            override fun onResponse(call: Call<FlightResponse>, response: Response<FlightResponse>) {
+                if (response.isSuccessful) {
+                    // La llamada fue exitosa, obtener la respuesta
+                    val flightResponse = response.body()
+
+                    // Si la llamada fue exitosa, le vamos a pasar al provider la lista de los vuelos.
+                    // a su vez, vamos a renderizar los Result Found.
+
+                    var totalVuelos = flightResponse.best_flights.size + flightResponse.other_flights.size
+                    txtResultsFound.text = totalVuelos.toString()
+
+                } else {
+                    // La llamada no fue exitosa, manejar el error aquí
+                    // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
+                }
+            }
+
+            override fun onFailure(call: Call<FlightResponse>, t: Throwable) {
+                // La llamada falló, manejar el error aquí
+                // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
+            }
+        })
+    }
+
 
     companion object {
         /**
