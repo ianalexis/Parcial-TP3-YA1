@@ -6,7 +6,7 @@
     <string name="string_profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="string_from">FROM</string>
+    <string name="string_from">From</string>
     <string name="title_profile">Profile</string>
     <string name="title_notification">Notification</string>
     <string name="title_get_help">Get Help</string>
@@ -21,4 +21,13 @@
     <string name="TrendingDestination">Trending Destination</string>
     <string name="see_all">See all</string>
     <string name="Offers">Offers</string>
+    <string name="united_airlines">United Airlines</string>
+    <string name="fligth_duration">01 hr 40min</string>
+    <string name="origin_code">EZE</string>
+    <string name="destination_code">LAX</string>
+    <string name="origin_city">Ezeiza Ar</string>
+    <string name="destination_city">Los Angeles</string>
+    <string name="search_class">Business Class</string>
+    <string name="price">$1128</string>
+    <string name="view_details">View Details</string>
 </resources>
