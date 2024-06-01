@@ -1,125 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.DestinationDetailFragment">
-
 
     <ImageView
         android:id="@+id/fragment_destdetail_img"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         tools:src="@tools:sample/backgrounds/scenic" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/fragment_destdetail_txtCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:text="City"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="28dp"
-            android:text="Code"
-            app:layout_constraintStart_toEndOf="@+id/fragment_destdetail_txtCity"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtCountry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
-            android:text="Country"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_txtCity" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="15dp"
-            android:text="Price"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtOverview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="25dp"
-            android:text="Overview"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_txtCountry" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtPhotos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:text="Fotos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_txtDesc" />
-
-        <TextView
-            android:id="@+id/fragment_destdetail_txtDesc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="15dp"
-            android:text="DescOverview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_txtOverview" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <Button
-            android:id="@+id/fragment_destdetail_btnBook"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="15dp"
-            android:text="Book Now"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_rv" />
+            <TextView
+                android:id="@+id/fragment_destdetail_txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fragment_destdetail_rv"
-            android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_destdetail_txtPhotos"
-            tools:layout_editor_absoluteX="1dp" />
+            <TextView
+                android:id="@+id/fragment_destdetail_txtCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Code" />
 
+            <TextView
+                android:id="@+id/fragment_destdetail_txtCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Country" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/fragment_destdetail_txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price" />
+
+            <TextView
+                android:id="@+id/fragment_destdetail_txtOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview" />
+
+            <TextView
+                android:id="@+id/fragment_destdetail_txtDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DescOverview" />
+
+            <TextView
+                android:id="@+id/fragment_destdetail_txtPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fotos" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_destdetail_rv"
+                android:layout_width="match_parent"
+                android:layout_height="145dp" />
+
+            <Button
+                android:id="@+id/fragment_destdetail_btnBook"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Book Now" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
