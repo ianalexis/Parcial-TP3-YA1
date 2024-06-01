@@ -7,4 +7,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="string_from">FROM</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_notification">Notification</string>
+    <string name="title_get_help">Get Help</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_settings">Settings</string>
 </resources>

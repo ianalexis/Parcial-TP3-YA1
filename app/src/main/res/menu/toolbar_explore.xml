@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_profile"
+
+        android:title="@string/title_profile" />
+
+    <item
+        android:id="@+id/navigation_notification"
+
+        android:title="@string/title_notification" />
+
+    <item
+        android:id="@+id/navigation_get_help"
+
+        android:title="@string/title_get_help" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+
+        android:title="@string/title_calendar" />
+
+    <item
+        android:id="@+id/navigation_settings"
+
+        android:title="@string/title_settings" />
+
+
 
 </menu>
