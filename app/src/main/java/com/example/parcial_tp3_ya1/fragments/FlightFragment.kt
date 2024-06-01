@@ -69,10 +69,6 @@ class FlightFragment : Fragment() {
         flightRv.layoutManager = linearLayoutManager
 
         loadVuelos()
-        // El adapter de vuelos recibe la lsita de vuelos.
-  //      val flightAdapter = FlightAdapter(listaVuelos)
-  //      flightRv.adapter = flightAdapter
-
     }
 
     private fun loadVuelos() {
@@ -85,29 +81,26 @@ class FlightFragment : Fragment() {
                     // La llamada fue exitosa, obtener la respuesta
                     val flightResponse = response.body()
 
-                    // Si la llamada fue exitosa, le vamos a pasar al provider la lista de los vuelos.
-                    // a su vez, vamos a renderizar los Result Found.
-
-                    val totalSize =
-                        flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
+                   val totalSize = flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
 
                     txtResultsFound.text = "$totalSize result founds"
+
+                    // El adapter de vuelos recibe la lsita de vuelos.
+                  //  val flightAdapter = FlightAdapter(flightResponse)
+                //    flightRv.adapter = flightAdapter
+
                     println("if")
 
                 } else {
-                    println("else")
-
                     // La llamada no fue exitosa, manejar el error aquí
                     // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
+
+                    println("else")
                 }
             } catch (e: Exception) {
                 println("catch")
-
             }
-
-
         }
-
     }
         companion object {
             /**

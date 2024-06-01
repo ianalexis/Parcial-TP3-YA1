@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_flight_rv"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="589dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         android:text="X result found"
         app:layout_constraintBottom_toTopOf="@+id/fragment_flight_rv"
         app:layout_constraintStart_toStartOf="parent" />
