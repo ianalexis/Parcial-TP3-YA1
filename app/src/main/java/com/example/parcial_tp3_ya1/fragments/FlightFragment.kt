@@ -64,7 +64,13 @@ class FlightFragment : Fragment() {
 
         val flightService = FlightServiceApiBuilder.create()
 
-        val miRespuesta = flightService.getFlights()
+        val flights = flightService.getFlights()
+
+        val flightResponse = flights.body()
+
+  //      if (flightResponse != null) {
+    //       println( flightResponse.price_insights?.lowest_price)
+ //       }
 
 
         // El adapter de vuelos recibe la lsita de vuelos.
