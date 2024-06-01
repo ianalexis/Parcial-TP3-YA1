@@ -49,6 +49,7 @@ dependencies {
 
 
     implementation(libs.androidx.material3)
+    implementation(libs.material)
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.converter.gson)

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.adapters.OffersDetailAdapter
 import com.example.parcial_tp3_ya1.providers.OffersProvider
+import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,9 +62,15 @@ class FlightFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(context)
         flightRv.layoutManager = linearLayoutManager
 
+        val flightService = FlightServiceApiBuilder.create()
+
+      //  val miLista = flightService.getFlights()
+
+
+
         // El adapter de vuelos recibe la lsita de vuelos.
-        val flightAdapter = FlightAdapter(listaVuelos)
-        flightRv.adapter = flightAdapter
+  //      val flightAdapter = FlightAdapter(listaVuelos)
+  //      flightRv.adapter = flightAdapter
 
     }
 
