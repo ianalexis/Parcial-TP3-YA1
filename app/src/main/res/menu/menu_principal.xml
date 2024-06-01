@@ -4,27 +4,27 @@
 
     <item
         android:id="@+id/explore"
-        android:iconTint="#FFFFFF"
+        android:iconTint="@color/white"
         android:icon="@drawable/explore_selected"
         android:title="@string/string_explore" />
 
     <item
         android:id="@+id/search"
         android:icon="@drawable/search_flights"
-        android:iconTint="#FFFFFF"
+        android:iconTint="@color/white"
         android:title="@string/string_search" />
 
 
     <item
         android:id="@+id/offers"
         android:icon="@drawable/offers"
-        android:iconTint="#FFFFFF"
+        android:iconTint="@color/white"
         android:title="@string/string_offers" />
 
     <item
         android:id="@+id/profile"
         android:icon="@drawable/userprofile"
-        android:iconTint="#FFFFFF"
+        android:iconTint="@color/white"
         android:title="@string/string_profile"/>
 
 

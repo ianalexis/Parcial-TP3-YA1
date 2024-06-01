@@ -5,4 +5,11 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="CustomToolbarStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textColorPrimary">@color/gris</item>
+        <item name="android:textColorSecondary">@color/gris</item>
+        <item name="actionMenuTextColor">@color/gris</item>
+        <item name="android:colorControlNormal">@color/gris</item>
+    </style>
 </resources>
