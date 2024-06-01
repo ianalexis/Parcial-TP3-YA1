@@ -15,4 +15,6 @@
     <string name="preference_night_mode_key">night_mode_preference</string>
     <string name="title_setting">Setting</string>
     <string name="preference_category">General</string>
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
 </resources>
