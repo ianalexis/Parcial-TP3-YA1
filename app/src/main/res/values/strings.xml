@@ -17,4 +17,8 @@
     <string name="preference_category">General</string>
     <string name="open">Open Drawer</string>
     <string name="close">Close Drawer</string>
+    <string name="flight">Flight</string>
+    <string name="TrendingDestination">Trending Destination</string>
+    <string name="see_all">See all</string>
+    <string name="Offers">Offers</string>
 </resources>

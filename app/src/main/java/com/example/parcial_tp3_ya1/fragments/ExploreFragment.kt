@@ -1,14 +1,11 @@
 package com.example.parcial_tp3_ya1.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
@@ -43,7 +40,7 @@ class ExploreFragment : Fragment() {
         this.rvDestinations = view1.findViewById(R.id.explore_rv_destinations)
         this.rvOffers = view1.findViewById(R.id.explore_rv_offers)
         this.rvMainDestinations = view1.findViewById(R.id.explore_rv_maindestinations)
-        this.button = view1.findViewById(R.id.explore_button)
+        this.button = view1.findViewById(R.id.flight_button)
 
         return this.view1
     }

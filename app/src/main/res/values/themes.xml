@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Parcial_TP3_YA1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/blanco</item>
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
