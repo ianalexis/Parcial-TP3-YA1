@@ -84,16 +84,34 @@ class FlightFragment : Fragment() {
                     // El adapter de vuelos recibe la lsita de vuelos.
                    // val flightAdapter = FlightAdapter(flightResponse)
                   // flightRv.adapter = flightAdapter
-                    println (flightResponse.search_parameters?.arrival_id)
-                    println (flightResponse.search_parameters?.departure_id)
-                    println (flightResponse.best_flights[0].price)
-                    println (flightResponse.other_flights[0].price)
+
+                    var salida = flightResponse.best_flights[0].flights?.get(0)?.departure_airport
+                    var llegada = flightResponse.best_flights[0].flights?.last()?.arrival_airport
+
+                    println ("SALIDA " + salida?.name)
+                    println("ID " + salida?.id)
+
+                    println ("LLEGADA  " + llegada?.name)
+                    println("ID " + llegada?.id)
+
+
+                    println ("From: " + flightResponse.best_flights[0].price)
                     println (flightResponse.best_flights[0].flights?.get(0)?.travel_class + " Class") //cambiarlo por el tipo de clase buisness class
                     println (flightResponse.best_flights[0].flights?.get(0)?.airline + " Airlines")
                     println (flightResponse.best_flights[0].airline_logo)
-                    println (flightResponse.best_flights[0].total_duration?.div(60) ?: 0)
-                    println (flightResponse.best_flights[0].flights?.get(0)?.arrival_airport?.name)
-                    println (flightResponse.best_flights[0].flights?.get(0)?.departure_airport?.name)
+
+
+
+
+
+                    println ("Llegada : " + flightResponse.best_flights[0].flights?.last()?.arrival_airport?.name)
+
+
+                    // Como aparece en figma
+                    val totalDurationInMinutes = flightResponse.best_flights[0].total_duration
+                    val hours = totalDurationInMinutes?.div(60)?.toInt()
+                    val minutes = totalDurationInMinutes?.rem(60)
+                    println("$hours hr $minutes min")
 
                 } else {
                     // La llamada no fue exitosa, manejar el error aquí
