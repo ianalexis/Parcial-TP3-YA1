@@ -24,4 +24,13 @@
     <string name="logout">Logout</string>
     <string name="settings">Settings</string>
     <string name="referral_code">Referral Code</string>
+    <string name="united_airlines">United Airlines</string>
+    <string name="fligth_duration">01 hr 40min</string>
+    <string name="origin_code">EZE</string>
+    <string name="destination_code">LAX</string>
+    <string name="origin_city">Ezeiza Ar</string>
+    <string name="destination_city">Los Angeles</string>
+    <string name="search_class">Business Class</string>
+    <string name="price">$1128</string>
+    <string name="view_details">View Details</string>
 </resources>
