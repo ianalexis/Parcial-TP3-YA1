@@ -21,6 +21,6 @@ class OffersDetailHolder (view: View): RecyclerView.ViewHolder(view){
     fun render(model : OffersEntitie){
         Glide.with(view).load(model.image).into(image)
         title.text = model.title
-        desc.text = model.desc
+        desc.text = model.logndesc
     }
 }
