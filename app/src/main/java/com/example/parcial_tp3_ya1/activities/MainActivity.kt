@@ -5,6 +5,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -48,6 +49,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.title = destination.label
         }
+
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_bar)
+
+        // Crea un ColorStateList a partir del selector de color
+        val colorStateList = ContextCompat.getColorStateList(this, R.color.nav_item_color_selector)
+
+        // Aplica el ColorStateList a los ítems del menú
+        bottomNavView.itemIconTintList = colorStateList
+        bottomNavView.itemTextColor = colorStateList
 
     }
 
