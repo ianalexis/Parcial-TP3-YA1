@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.parcial_tp3_ya1.R
 
 class DestinationDetailFragment : Fragment() {
@@ -17,6 +19,7 @@ class DestinationDetailFragment : Fragment() {
     lateinit var txtPrice : TextView
     lateinit var txtCode : TextView
     lateinit var txtDesc : TextView
+    lateinit var imgImagen : ImageView
     lateinit var rvPhotos : RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +40,9 @@ class DestinationDetailFragment : Fragment() {
         txtPrice = vista.findViewById(R.id.fragment_destdetail_txtPrice)
         txtCode = vista.findViewById(R.id.fragment_destdetail_txtCode)
         txtDesc = vista.findViewById(R.id.fragment_destdetail_txtDesc)
+        imgImagen = vista.findViewById(R.id.fragment_destdetail_img)
         rvPhotos = vista.findViewById(R.id.fragment_destdetail_rv)
+
 
         return vista
     }
@@ -51,6 +56,7 @@ class DestinationDetailFragment : Fragment() {
         txtPrice.text = destination.price
         txtCode.text = destination.code
         txtDesc.text = destination.desc
+        Glide.with(vista).load(destination.image).into(imgImagen)
 
         // Al provider del recycler view, hay que pasarle el array de fotos que recibe este fragmento por parametro.
     }
