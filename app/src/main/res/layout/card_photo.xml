@@ -10,13 +10,14 @@
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="4dp">
 
 
     <ImageView
         android:id="@+id/card_photo_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.cardview.widget.CardView>

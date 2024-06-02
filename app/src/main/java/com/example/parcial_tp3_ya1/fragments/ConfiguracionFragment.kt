@@ -8,6 +8,7 @@ import androidx.preference.SwitchPreferenceCompat
 import com.example.parcial_tp3_ya1.R
 
 class ConfiguracionFragment : PreferenceFragmentCompat() {
+
     companion object {
         fun newInstance() = ConfiguracionFragment()
     }

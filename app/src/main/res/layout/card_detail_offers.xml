@@ -82,6 +82,12 @@
                 android:text="@string/detail_offers_desc"
                 android:textColor="@color/gris"
                 android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/card_detail_offers_vector"
+                android:layout_width="20dp"
+                android:layout_height="14dp"
+                android:src="@drawable/offers_vector" />
         </LinearLayout>
 
     </LinearLayout>
