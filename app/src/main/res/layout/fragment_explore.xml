@@ -34,7 +34,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/flight" />
+            android:text="@string/flight"
+            android:textColor="@color/textonormal"
+            />
 
     </LinearLayout>
 
@@ -50,7 +52,9 @@
             android:layout_height="wrap_content"
             android:text="@string/TrendingDestination"
             android:layout_weight="1"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/textonormal"
+            />
 
         <TextView
             android:id="@+id/see_all_button_trending"
@@ -82,7 +86,9 @@
             android:layout_height="wrap_content"
             android:text="@string/Offers"
             android:layout_weight="1"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/textonormal"
+            />
 
         <TextView
             android:id="@+id/see_all_button_offers"
@@ -98,6 +104,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/explore_rv_offers"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>

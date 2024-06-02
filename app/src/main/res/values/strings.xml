@@ -50,5 +50,6 @@
     <string name="string_to">To</string>
     <string name="round_trip">Round Trip</string>
     <string name="one_way">One Way</string>
+    <string name="fotos">Photos</string>
 
 </resources>

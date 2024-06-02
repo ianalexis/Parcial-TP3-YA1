@@ -42,7 +42,7 @@
                 android:id="@+id/bottom_bar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="@color/fondo"
                 app:itemIconTint="@color/gris"
                 app:itemTextColor="@color/gris"
                 app:layout_constraintBottom_toBottomOf="parent"
