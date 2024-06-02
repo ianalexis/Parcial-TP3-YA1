@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        // Actualizar título de la Toolbar en cambio de destino
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            supportActionBar?.title = destination.label
+        }
         bottomNavView = findViewById(R.id.bottom_bar)
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
 
@@ -48,7 +52,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-        selectItemNav(menuItem)
+        when (menuItem.itemId) {
+            R.id.profile -> {
+                navHostFragment.navController.navigate(R.id.profile)
+            }
+           R.id.nav_settings -> {
+                navHostFragment.navController.navigate(R.id.navigation_settings)
+            }
+            // Agregar otros casos aquí para otros elementos del menú
+        }
+        drawerLayout.closeDrawers()
         return true
     }
 
