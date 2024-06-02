@@ -17,9 +17,6 @@ class DestinationAdapter (var destinationEntitieList: List<DestinationEntitie>) 
     override fun onBindViewHolder(holder: DestinationHolder, position: Int) {
         val destination = destinationEntitieList[position]
         holder.render(destination)
-
-
-
     }
 
     override fun getItemCount(): Int {

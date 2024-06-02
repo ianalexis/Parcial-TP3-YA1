@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.parcial_tp3_ya1.R
+import com.example.parcial_tp3_ya1.adapters.DestinationPhotoAdapter
+import com.example.parcial_tp3_ya1.adapters.FlightAdapter
 
 class DestinationDetailFragment : Fragment() {
 
@@ -57,6 +60,14 @@ class DestinationDetailFragment : Fragment() {
         txtCode.text = destination.code
         txtDesc.text = destination.desc
         Glide.with(vista).load(destination.image).into(imgImagen)
+
+        rvPhotos.setHasFixedSize(true)
+
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        rvPhotos.layoutManager = linearLayoutManager
+
+        val photosAdapter = DestinationPhotoAdapter(destination.photos)
+        rvPhotos.adapter = photosAdapter
 
         // Al provider del recycler view, hay que pasarle el array de fotos que recibe este fragmento por parametro.
     }
