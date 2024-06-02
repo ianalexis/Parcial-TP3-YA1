@@ -3,10 +3,12 @@ package com.example.parcial_tp3_ya1.holders
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.entities.DestinationEntitie
+import com.example.parcial_tp3_ya1.fragments.ExploreFragmentDirections
 
 class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
     private var view: View
@@ -22,5 +24,12 @@ class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
         city.text = model.city
         Glide.with(view).load(model.image).into(image)
         price.text = model.price
+
+        this.view.setOnClickListener {
+            val action = ExploreFragmentDirections.actionExploreToDestinationDetail(model)
+            view.findNavController().navigate(action)
+        }
     }
+
+
 }
