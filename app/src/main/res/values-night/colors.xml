@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="celeste">#3AA4C8</color>
-    <color name="azul">#10579B</color>
+    <color name="celeste">#10579B</color>
+    <color name="azul">#3AA4C8</color>
     <color name="violeta">#5443CB</color>
     <color name="verde">#1ADD9F</color>
     <color name="naranja">#F99A0E</color>
-    <color name="fondo">#191919</color>
-    <color name="fondosecundario">#FF000000</color>
-    <color name="textonormal">#FFFFFFFF</color>
-    <color name="textosub">#F8F9FB</color>
+
+
+    <color name="fondosecundario">#191919</color>
+    <color name="fondoterciario">#E6000000</color>
+    <color name="fondo">#FF000000</color>
+    <color name="textosub">#9F9F9F</color>
+    <color name="textonormal">#F8F9FB</color>
 </resources>
