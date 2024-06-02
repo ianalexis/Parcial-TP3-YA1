@@ -24,6 +24,7 @@
         android:name="com.example.parcial_tp3_ya1.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/search"
         android:name="com.example.parcial_tp3_ya1.fragments.SearchFragment"
@@ -57,4 +58,5 @@
             android:id="@+id/action_flightFragment_to_search"
             app:destination="@id/search" />
     </fragment>
+
 </navigation>
