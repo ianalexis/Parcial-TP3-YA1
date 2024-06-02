@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
+import com.example.parcial_tp3_ya1.adapters.FlightAdapter
 import com.example.parcial_tp3_ya1.entities.FlightEntitie
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
 import kotlinx.coroutines.Dispatchers
@@ -59,71 +60,60 @@ class FlightFragment : Fragment() {
 
     override fun onStart(){
         super.onStart()
-        //offers
-        flightRv.setHasFixedSize(true)
+        //flights
+        lifecycleScope.launch {
+            loadVuelos()
 
-        val linearLayoutManager = LinearLayoutManager(context)
-        flightRv.layoutManager = linearLayoutManager
+            flightRv.setHasFixedSize(true)
 
-        loadVuelos()
+            val linearLayoutManager = LinearLayoutManager(context)
+            flightRv.layoutManager = linearLayoutManager
+
+            val FlightAdapter = FlightAdapter(loadVuelos())
+            flightRv.adapter = FlightAdapter
+        }
+
+
     }
 
-    private fun loadVuelos() {
+    private suspend fun loadVuelos(): List<FlightEntitie> {
         val service = FlightServiceApiBuilder.create()
+        val listaVuelos = arrayListOf<FlightEntitie>()
 
-        lifecycleScope.launch {
-            try {
-                val response = withContext(Dispatchers.IO) { service.getFlights() }
-                if (response.isSuccessful) {
-                    // La llamada fue exitosa, obtener la respuesta
-                    val flightResponse = response.body()
+        try {
+            val response = withContext(Dispatchers.IO) { service.getFlights() }
+            if (response.isSuccessful) {
+                val flightResponse = response.body()
+                val totalSize = flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
+                txtResultsFound.text = "$totalSize result founds"
 
-                   val totalSize = flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
-
-                    txtResultsFound.text = "$totalSize result founds"
-
-                    // El adapter de vuelos recibe la lsita de vuelos.
-                   // val flightAdapter = FlightAdapter(flightResponse)
-                  // flightRv.adapter = flightAdapter
-
-
-
-
-
-
-
-                    val listaVuelos = arrayListOf<FlightEntitie>()
-                    for (vuelo in flightResponse.best_flights){
-                        var salida = vuelo.flights?.get(0)?.departure_airport
-                        var llegada = vuelo.flights?.last()?.arrival_airport
-                        val totalDurationInMinutes = vuelo.total_duration?.div(60)
-                        val hours = totalDurationInMinutes?.div(60)?.toInt()
-                        val minutes = totalDurationInMinutes?.rem(60)
-                        var tiempo = "$hours hr $minutes min"
-                        listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
-                         }
-                            println (listaVuelos.size)
-
-                        for (vuelo in flightResponse.other_flights){
-                        var salida = vuelo.flights?.get(0)?.departure_airport
-                        var llegada = vuelo.flights?.last()?.arrival_airport
-                        val totalDurationInMinutes = vuelo.total_duration?.div(60)
-                        val hours = totalDurationInMinutes?.div(60)?.toInt()
-                        val minutes = totalDurationInMinutes?.rem(60)
-                        var tiempo = "$hours hr $minutes min"
-                        listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
-                    }
-                    println (listaVuelos.size)
-                } else {
-                    // La llamada no fue exitosa, manejar el error aquí
-                    // Puedes mostrar un mensaje de error o realizar cualquier otra acción necesaria.
-
-                    println("else")
+                for (vuelo in flightResponse.best_flights){
+                    var salida = vuelo.flights?.get(0)?.departure_airport
+                    var llegada = vuelo.flights?.last()?.arrival_airport
+                    val totalDurationInMinutes = vuelo.total_duration?.div(60)
+                    val hours = totalDurationInMinutes?.div(60)?.toInt()
+                    val minutes = totalDurationInMinutes?.rem(60)
+                    var tiempo = "$hours hr $minutes min"
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
                 }
-            } catch (e: Exception) {
-                println("catch")
+
+                for (vuelo in flightResponse.other_flights){
+                    var salida = vuelo.flights?.get(0)?.departure_airport
+                    var llegada = vuelo.flights?.last()?.arrival_airport
+                    val totalDurationInMinutes = vuelo.total_duration?.div(60)
+                    val hours = totalDurationInMinutes?.div(60)?.toInt()
+                    val minutes = totalDurationInMinutes?.rem(60)
+                    var tiempo = "$hours hr $minutes min"
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
+                }
+            } else {
+                println("else")
             }
+        } catch (e: Exception) {
+            println("catch")
         }
+
+        return listaVuelos
     }
         companion object {
             /**
