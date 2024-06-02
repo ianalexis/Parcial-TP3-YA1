@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation.findNavController
@@ -44,6 +46,20 @@ class SearchFragment : Fragment() {
             val action = SearchFragmentDirections.actionSearchToFlightFragment()
             findNavController().navigate(action)
         }
+
+        var selectList : AutoCompleteTextView
+        // Obtener referencia al AutoCompleteTextView del layout
+        selectList = view1.findViewById(R.id.dropdown)
+
+        // Lista de elementos predeterminada
+        val items = arrayOf("Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4")
+
+        // Crear un adaptador con la lista de elementos
+        val adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_dropdown_item_1line, items)
+
+        // Establecer el adaptador en el AutoCompleteTextView
+        selectList.setAdapter(adapter)
+
         return view1
     }
 
