@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,6 +46,10 @@ class ExploreFragment : Fragment() {
         val flightButton: Button = view1.findViewById(R.id.flight_button)
         flightButton.setOnClickListener {
             findNavController().navigate(R.id.action_explore_to_flightFragment)
+        }
+        val seeAllOffers: TextView = view1.findViewById(R.id.see_all_button_offers)
+        seeAllOffers.setOnClickListener {
+            findNavController().navigate(R.id.action_explore_to_offersDetail)
         }
         return this.view1
     }
