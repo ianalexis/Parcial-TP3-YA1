@@ -43,5 +43,6 @@
     <string name="profile_referral_code">Referral Code</string>
     <string name="profile_settings">Settings</string>
     <string name="profile_logout">Logout</string>
+    <string name="menu_hello">Hello</string>
 
 </resources>
