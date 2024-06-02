@@ -79,12 +79,11 @@
                     android:orientation="vertical"
                     android:paddingTop="16dp">
 
-                    <Button
+                    <TextView
                         android:id="@+id/fragment_profile_payment_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_payment"
-
                         android:drawablePadding="10dp"
                         android:text="@string/profile_payment"
                         android:background="?attr/selectableItemBackground"
@@ -96,7 +95,7 @@
                         android:textAllCaps="false"
                         android:backgroundTint="@android:color/transparent" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/fragment_profile_referralcode_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -112,7 +111,7 @@
                         android:textAllCaps="false"
                         android:backgroundTint="@android:color/transparent" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/fragment_profile_settings_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -128,12 +127,12 @@
                         android:textAllCaps="false"
                         android:backgroundTint="@android:color/transparent" />
 
-                    <Button
+                    <TextView
                         android:id="@+id/fragment_profile_logout_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_logout"
-                        android:drawablePadding="10dp"
+                        android:drawablePadding="17dp"
                         android:text="@string/profile_logout"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="start|center_vertical"
