@@ -52,11 +52,6 @@ class DestinationDetailFragment : Fragment() {
         txtCode.text = destination.code
         txtDesc.text = destination.desc
 
-        //val nombre = PerritoDetalleArgs.fromBundle(requireArguments()).Perrito.name
-        //title.text = nombre.toString()
-
-
-        //
         // Al provider del recycler view, hay que pasarle el array de fotos que recibe este fragmento por parametro.
     }
     companion object {
