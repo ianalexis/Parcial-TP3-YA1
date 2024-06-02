@@ -11,29 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.adapters.FlightAdapter
+import com.example.parcial_tp3_ya1.data.Airport
 import com.example.parcial_tp3_ya1.entities.FlightEntitie
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FlightFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FlightFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    // SEVICIO DE VUELOS
-    // val listaVuelos = FlightServiceImpl.getFlights()
 
     lateinit var vista : View
     lateinit var flightRv : RecyclerView
@@ -41,8 +27,6 @@ class FlightFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -54,13 +38,13 @@ class FlightFragment : Fragment() {
         this.flightRv = vista.findViewById(R.id.fragment_flight_rv)
         this.txtResultsFound = vista.findViewById((R.id.fragment_flight_txtResult))
 
-
         return vista
     }
 
     override fun onStart(){
         super.onStart()
-        //flights
+
+        //flights co routine
         lifecycleScope.launch {
             loadVuelos()
 
@@ -69,68 +53,75 @@ class FlightFragment : Fragment() {
             val linearLayoutManager = LinearLayoutManager(context)
             flightRv.layoutManager = linearLayoutManager
 
-            val FlightAdapter = FlightAdapter(loadVuelos())
-            flightRv.adapter = FlightAdapter
+            val flightAdapter = FlightAdapter(loadVuelos())
+            flightRv.adapter = flightAdapter
         }
-
-
     }
 
-    private suspend fun loadVuelos(): List<FlightEntitie> {
+    private suspend fun loadVuelos() : List<FlightEntitie> {
         val service = FlightServiceApiBuilder.create()
         val listaVuelos = arrayListOf<FlightEntitie>()
 
         try {
             val response = withContext(Dispatchers.IO) { service.getFlights() }
             if (response.isSuccessful) {
+
+                // "Desestructuramos" en la variable flighrResponse el body de la respuesta de la api,
                 val flightResponse = response.body()
+
+                // Cargamos el total de vuelos encontrados en la vista.
                 val totalSize = flightResponse?.best_flights!!.size + flightResponse.other_flights!!.size
                 txtResultsFound.text = "$totalSize result founds"
 
-                for (vuelo in flightResponse.best_flights){
-                    var salida = vuelo.flights?.get(0)?.departure_airport
-                    var llegada = vuelo.flights?.last()?.arrival_airport
-                    val totalDurationInMinutes = vuelo.total_duration?.div(60)
-                    val hours = vuelo.total_duration?.div(60)?.toInt() ?: 0
-                    val minutes = ((vuelo.total_duration?.div(60))?.minus((vuelo.total_duration?.div(60)?.toInt()!!))
-                        ?.times(60))?.toInt()
-                    var tiempo = "$hours hr $minutes min"
-                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", vuelo.price.toString()))                }
+                // Inicializamos las variables que utilizaremos posteriormente con la generacion de entidades.
+                var salida : Airport?
+                var llegada : Airport?
+                var tiempo : String?
+                var precio : String?
 
-                for (vuelo in flightResponse.other_flights){
-                    var salida = vuelo.flights?.get(0)?.departure_airport
-                    var llegada = vuelo.flights?.last()?.arrival_airport
+                // Cargamos en la lista de vuelos la respuesta de la api de mejores vuelos
+                for (vuelo in flightResponse.best_flights){
+                    salida = vuelo.flights?.get(0)?.departure_airport // Obtenemos el aeropuerto de salida
+                    llegada = vuelo.flights?.last()?.arrival_airport // OBtenemos el aeropuerto de llegada
+
+                    // Formateamos el tiempo para la vista
                     val hours = vuelo.total_duration?.div(60)?.toInt() ?: 0
                     val minutes = ((vuelo.total_duration?.div(60))?.minus((vuelo.total_duration?.div(60)?.toInt()!!))
                         ?.times(60))?.toInt()
-                    var tiempo = "$hours hr $minutes min"
-                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", vuelo.price.toString()))
+                    // Adecuamos strings,
+                    tiempo = "$hours hr $minutes min"
+                    precio = "$" + vuelo.price
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", precio))
+                }
+                // Cargamos en la lista de vuelos la espuesta de la api de otros vuelos
+                for (vuelo in flightResponse.other_flights){
+                     salida = vuelo.flights?.get(0)?.departure_airport // Obtenemos el aeropuerto de salida
+                     llegada = vuelo.flights?.last()?.arrival_airport // OBtenemos el aeropuerto de llegada
+
+                    // Formateamos el tiempo para la vista
+                    val hours = vuelo.total_duration?.div(60)?.toInt() ?: 0
+                    val minutes = ((vuelo.total_duration?.div(60))?.minus((vuelo.total_duration?.div(60)?.toInt()!!))
+                        ?.times(60))?.toInt()
+                    // Adecuamos strings,
+                    tiempo = "$hours hr $minutes min"
+                    precio = "$" + vuelo.price
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", precio))
                 }
             } else {
-                println("else")
+                // En caso de error con la api, se maneja.
             }
         } catch (e: Exception) {
-            println("catch")
+                // En caso de un fatal error. Se maneja
         }
-
+        // Devolvelos la lista de vuelos para manipular el RV
         return listaVuelos
     }
         companion object {
-            /**
-             * Use this factory method to create a new instance of
-             * this fragment using the provided parameters.
-             *
-             * @param param1 Parameter 1.
-             * @param param2 Parameter 2.
-             * @return A new instance of fragment FlightFragment.
-             */
-            // TODO: Rename and change types and number of parameters
             @JvmStatic
-            fun newInstance(param1: String, param2: String) =
+            fun newInstance() =
                 FlightFragment().apply {
                     arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
+
                     }
                 }
         }
