@@ -28,7 +28,7 @@
             android:layout_marginTop="-10dp"
             android:layout_marginBottom="0dp"
             app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
+            app:cardElevation="50dp"
             app:cardBackgroundColor="@color/white">
 
             <LinearLayout
@@ -42,7 +42,7 @@
                     android:id="@+id/fragment_profile_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Macy Johnson"
+                    android:text="@string/profile_name"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Baguio, Philippines"
+                    android:text="@string/profile_from"
                     android:textColor="#757575"
                     android:textSize="14sp" />
 
@@ -61,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="I like the beach, mountains, forest and everything about nature! :)"
+                    android:text="@string/profile_desc"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -70,6 +70,8 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="16dp"
                     android:background="#E0E0E0" />
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_payment"
                         android:drawablePadding="10dp"
-                        android:text="Payment Details"
+                        android:text="@string/profile_payment"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="start|center_vertical"
                         android:padding="16dp"
@@ -99,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_referral_code"
                         android:drawablePadding="10dp"
-                        android:text="Referral Code"
+                        android:text="@string/profile_referral_code"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="start|center_vertical"
                         android:padding="16dp"
@@ -115,7 +117,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_settings"
                         android:drawablePadding="10dp"
-                        android:text="Settings"
+                        android:text="@string/profile_settings"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="start|center_vertical"
                         android:padding="16dp"
@@ -131,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_logout"
                         android:drawablePadding="10dp"
-                        android:text="Logout"
+                        android:text="@string/profile_logout"
                         android:background="?attr/selectableItemBackground"
                         android:gravity="start|center_vertical"
                         android:padding="16dp"
@@ -157,7 +159,7 @@
             app:shapeAppearanceOverlay="@style/circleImageView"
             app:strokeColor="@color/white"
             app:strokeWidth="2dp"
-            android:elevation="4dp"
+            android:elevation="50dp"
             tools:src="@tools:sample/avatars" />
 
     </RelativeLayout>
