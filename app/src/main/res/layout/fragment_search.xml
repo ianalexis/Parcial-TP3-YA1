@@ -49,7 +49,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_search_selectDepartureLayout"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:startIconDrawable="@drawable/flight_takeoff_24px"
@@ -102,39 +101,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/fragment_search_selectAdultLayout"
-                    android:layout_width="160dp"
-                    android:layout_height="57dp"
-                    app:startIconDrawable="@drawable/group_24px"
-                    android:hint="Adult">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fragment_search_selectAdult"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/fragment_search_selectCategoryLayout"
-
-                    android:layout_width="160dp"
-                    android:layout_height="57dp"
-                    app:startIconDrawable="@drawable/thumb_up_24px"
-                    android:hint="Category">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fragment_search_selectCategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    />
 
             </LinearLayout>
 
