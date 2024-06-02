@@ -11,6 +11,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.parcial_tp3_ya1.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Aplica el ColorStateList a los ítems del menú
         bottomNavView.itemIconTintList = colorStateList
         bottomNavView.itemTextColor = colorStateList
+        bottomNavView.labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
 
     }
 
