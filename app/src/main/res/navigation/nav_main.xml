@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_explore_to_destinationDetail"
             app:destination="@id/destinationDetail" />
+        <action
+            android:id="@+id/action_explore_to_offersDetail"
+            app:destination="@id/offers" />
     </fragment>
     <fragment
         android:id="@+id/offers"
