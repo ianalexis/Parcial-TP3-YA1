@@ -12,4 +12,10 @@
         <item name="actionMenuTextColor">@color/gris</item>
         <item name="android:colorControlNormal">@color/gris</item>
     </style>
+
+    <style name="RoundedCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
 </resources>
