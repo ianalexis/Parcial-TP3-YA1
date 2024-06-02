@@ -6,58 +6,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.SearchFragment">
+    tools:context=".fragments.SearchFragment"
+    android:padding = "4dp"
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
-
-
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="8dp">
 
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/toggleButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:singleSelection="true">
-                <Button
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:id="@+id/search_fragment_btnOneWay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="One way"
-                    app:rippleColor="@color/azul"
-                    />
-                <Button
-                    style="?attr/materialButtonOutlinedStyle"
-                    android:id="@+id/search_fragment_btnRoundTrip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Round Trip"
-                    app:rippleColor="@color/azul"
-                    />
-            </com.google.android.material.button.MaterialButtonToggleGroup>
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/search_fragment_btnOneWay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/one_way"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/search_fragment_btnRoundTrip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/round_trip"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_search_selectDepartureLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:startIconDrawable="@drawable/flight_takeoff_24px"
-                android:hint="From">
+                android:hint="@string/string_from"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fragment_search_selectDeparture"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
+                    android:hint=""
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:startIconDrawable="@drawable/flight_land_24px"
-                android:hint="To">
+                android:hint="@string/string_to"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fragment_search_selectArrival"
@@ -83,15 +87,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:startIconDrawable="@drawable/calendar_today_24px"
-                android:hint="Departure Date">
+                android:hint="@string/date"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <EditText
                     android:id="@+id/fragment_search_selectDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-
-                   />
+                    android:inputType="date" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,14 +104,39 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_search_selectAdultLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="57dp"
+                    android:layout_weight="1"
+                    app:startIconDrawable="@drawable/group_24px"
+                    android:hint="@string/passengers"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-                <AutoCompleteTextView
-                    android:id="@+id/dropdown"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fragment_search_selectAdult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
 
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fragment_search_selectCategoryLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="57dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    app:startIconDrawable="@drawable/thumb_up_24px"
+                    android:hint="@string/string_class"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/fragment_search_selectCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -123,14 +151,19 @@
                 app:cornerRadius="8dp" />
 
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Offers"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        >
+    </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_search_rv"
-        android:layout_width="match_parent"
-        android:layout_height="158dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp" />
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

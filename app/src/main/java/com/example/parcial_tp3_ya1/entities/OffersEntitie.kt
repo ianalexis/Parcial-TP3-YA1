@@ -3,15 +3,17 @@ package com.example.parcial_tp3_ya1.entities
 import android.os.Parcel
 import android.os.Parcelable
 
-class OffersEntitie(image: String?, title : String?, desc: String?, logndesc : String?) : Parcelable {
+class OffersEntitie(image: String?, title : String?, longtitle : String?, desc: String?, logndesc : String?) : Parcelable {
 
     var image : String?
     var title : String?
+    var longtitle : String?
     var desc : String?
     var logndesc : String?
 
 
     constructor(parcel: Parcel) : this(
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -21,12 +23,14 @@ class OffersEntitie(image: String?, title : String?, desc: String?, logndesc : S
     init {
         this.image = image
         this.title = title
+        this.longtitle = longtitle
         this.desc = desc
         this.logndesc = logndesc
         }
      override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(image)
          parcel.writeString(title)
+         parcel.writeString(longtitle)
         parcel.writeString(desc)
         parcel.writeString(logndesc)
     }

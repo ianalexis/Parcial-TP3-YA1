@@ -9,8 +9,6 @@ import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
-import androidx.core.content.ContextCompat
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,13 +16,13 @@ import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.adapters.OffersAdapter
 
 import com.example.parcial_tp3_ya1.providers.OffersProvider
-import com.google.android.material.textfield.TextInputLayout
 
 class SearchFragment : Fragment() {
 
     lateinit var view1 : View
     lateinit var offersRv: RecyclerView
     lateinit var searchButton : Button
+    lateinit var categoryList : AutoCompleteTextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,24 +39,17 @@ class SearchFragment : Fragment() {
          this.view1 = inflater.inflate(R.layout.fragment_search, container, false)
          this.offersRv = view1.findViewById(R.id.fragment_search_rv)
          this.searchButton = view1.findViewById(R.id.fragment_search_btnSearch)
+        this.categoryList = view1.findViewById(R.id.fragment_search_selectCategory)
 
         searchButton.setOnClickListener {
             val action = SearchFragmentDirections.actionSearchToFlightFragment()
             findNavController().navigate(action)
         }
 
-        var selectList : AutoCompleteTextView
-        // Obtener referencia al AutoCompleteTextView del layout
-        selectList = view1.findViewById(R.id.dropdown)
 
-        // Lista de elementos predeterminada
-        val items = arrayOf("Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4")
-
-        // Crear un adaptador con la lista de elementos
-        val adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_dropdown_item_1line, items)
-
-        // Establecer el adaptador en el AutoCompleteTextView
-        selectList.setAdapter(adapter)
+        val items = listOf("Economy", "Business")
+        val adapter = ArrayAdapter(requireContext(), R.layout.item_list_search_category, items)
+        categoryList.setAdapter(adapter)
 
         return view1
     }
@@ -79,7 +70,7 @@ class SearchFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             SearchFragment().apply {
                 arguments = Bundle().apply {
                 }
