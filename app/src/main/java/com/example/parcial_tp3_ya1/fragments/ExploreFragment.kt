@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_tp3_ya1.R
@@ -41,7 +43,10 @@ class ExploreFragment : Fragment() {
         this.rvOffers = view1.findViewById(R.id.explore_rv_offers)
         this.rvMainDestinations = view1.findViewById(R.id.explore_rv_maindestinations)
         this.button = view1.findViewById(R.id.flight_button)
-
+        val flightButton: Button = view1.findViewById(R.id.flight_button)
+        flightButton.setOnClickListener {
+            findNavController().navigate(R.id.action_explore_to_flightFragment)
+        }
         return this.view1
     }
 
