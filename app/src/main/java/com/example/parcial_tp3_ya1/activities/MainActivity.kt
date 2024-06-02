@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.profile -> {
                 navHostFragment.navController.navigate(R.id.profile)
             }
-           R.id.nav_settings -> {
+           R.id.navigation_settings -> {
                 navHostFragment.navController.navigate(R.id.navigation_settings)
             }
             // Agregar otros casos aquí para otros elementos del menú
