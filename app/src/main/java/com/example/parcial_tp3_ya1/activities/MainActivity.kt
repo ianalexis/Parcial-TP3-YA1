@@ -65,17 +65,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun selectItemNav(menuItem: MenuItem) {
-        when (menuItem.itemId) {
-            R.id.profile -> {
-                navHostFragment.navController.navigate(R.id.fragment_profile)
-            }
-            // Agregar otros casos aquí para otros elementos del menú
-        }
-        title = menuItem.title
-        drawerLayout.closeDrawers()
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
             return true
