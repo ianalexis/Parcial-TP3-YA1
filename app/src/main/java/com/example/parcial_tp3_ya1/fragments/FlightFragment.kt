@@ -14,6 +14,7 @@ import com.example.parcial_tp3_ya1.adapters.FlightAdapter
 import com.example.parcial_tp3_ya1.data.Airport
 import com.example.parcial_tp3_ya1.entities.FlightEntitie
 import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
+import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,7 +30,6 @@ class FlightFragment : Fragment() {
         arguments?.let {
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
