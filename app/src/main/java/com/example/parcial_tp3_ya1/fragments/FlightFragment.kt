@@ -91,20 +91,20 @@ class FlightFragment : Fragment() {
                     var salida = vuelo.flights?.get(0)?.departure_airport
                     var llegada = vuelo.flights?.last()?.arrival_airport
                     val totalDurationInMinutes = vuelo.total_duration?.div(60)
-                    val hours = totalDurationInMinutes?.div(60)?.toInt()
-                    val minutes = totalDurationInMinutes?.rem(60)
+                    val hours = vuelo.total_duration?.div(60)?.toInt() ?: 0
+                    val minutes = ((vuelo.total_duration?.div(60))?.minus((vuelo.total_duration?.div(60)?.toInt()!!))
+                        ?.times(60))?.toInt()
                     var tiempo = "$hours hr $minutes min"
-                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
-                }
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", vuelo.price.toString()))                }
 
                 for (vuelo in flightResponse.other_flights){
                     var salida = vuelo.flights?.get(0)?.departure_airport
                     var llegada = vuelo.flights?.last()?.arrival_airport
-                    val totalDurationInMinutes = vuelo.total_duration?.div(60)
-                    val hours = totalDurationInMinutes?.div(60)?.toInt()
-                    val minutes = totalDurationInMinutes?.rem(60)
+                    val hours = vuelo.total_duration?.div(60)?.toInt() ?: 0
+                    val minutes = ((vuelo.total_duration?.div(60))?.minus((vuelo.total_duration?.div(60)?.toInt()!!))
+                        ?.times(60))?.toInt()
                     var tiempo = "$hours hr $minutes min"
-                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.price.toString(), vuelo.airline_logo, vuelo.flights?.get(0)?.airline, vuelo.flights?.get(0)?.travel_class))
+                    listaVuelos.add(FlightEntitie(salida?.id, salida?.name, llegada?.id, llegada?.name, tiempo, vuelo.flights?.get(0)?.airline + " Airlines", vuelo.airline_logo, vuelo.flights?.get(0)?.travel_class + " class", vuelo.price.toString()))
                 }
             } else {
                 println("else")
