@@ -23,7 +23,7 @@
         android:title="@string/title_calendar" />
 
     <item
-        android:id="@+id/nav_settings"
+        android:id="@+id/navigation_settings"
         android:icon="@drawable/p_settings"
         android:title="@string/title_setting" />
 </menu>
