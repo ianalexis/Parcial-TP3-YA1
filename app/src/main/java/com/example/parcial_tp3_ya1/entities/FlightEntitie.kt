@@ -29,10 +29,10 @@ class FlightEntitie (idIda : String?, aeropuertoIda: String?, idVuelta : String?
     init {
         this.idIda = idIda
         this.aeropuertoIda = aeropuertoIda
-        this.aerolinea = aerolinea
         this.idVuelta = idVuelta
         this.aeropuertoVuelta = aeropuertoVuelta
         this.duracion = duracion
+        this.aerolinea = aerolinea
         this.logo = logo
         this.clase = clase
         this.precio = precio
@@ -41,10 +41,10 @@ class FlightEntitie (idIda : String?, aeropuertoIda: String?, idVuelta : String?
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(idIda)
         parcel.writeString(aeropuertoIda)
-        parcel.writeString(aerolinea)
         parcel.writeString(idVuelta)
         parcel.writeString(aeropuertoVuelta)
         parcel.writeString(duracion)
+        parcel.writeString(aerolinea)
         parcel.writeString(logo)
         parcel.writeString(clase)
         parcel.writeString(precio)
