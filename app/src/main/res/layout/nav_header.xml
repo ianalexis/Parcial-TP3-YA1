@@ -5,9 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="110dp"
     android:gravity="bottom"
     android:paddingStart="25dp"
+    android:paddingEnd="25dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,11 +18,11 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/nav_header_profile_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             app:shapeAppearanceOverlay="@style/circleImageView"
-            tools:src="@tools:sample/avatars" />
+            app:srcCompat="@drawable/fotoperfil" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,20 +33,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/menu_hello"
-                android:textSize="18dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/nav_header_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="1dp"
                 android:text="@string/profile_name"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="24dp" />
+                android:textSize="20dp" />
 
 
         </LinearLayout>
@@ -54,7 +55,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-
-        android:background="#E0E0E0" />
+        android:background="@color/gris" />
 
 </LinearLayout>
