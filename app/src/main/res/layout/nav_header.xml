@@ -3,7 +3,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="110dp"
     android:gravity="bottom"
@@ -30,12 +29,15 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/nav_header_greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/menu_hello"
-                android:textSize="14dp" />
+                android:textSize="14sp"
+                android:textColor="@color/textosub"
+                />
 
             <TextView
                 android:id="@+id/nav_header_name"
@@ -45,8 +47,8 @@
                 android:layout_marginTop="1dp"
                 android:text="@string/profile_name"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textColor="@color/textonormal"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -55,6 +57,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gris" />
+        android:background="@color/fondoterciario" />
 
 </LinearLayout>
