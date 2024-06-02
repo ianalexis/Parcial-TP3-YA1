@@ -13,4 +13,10 @@
     <color name="verde">#1ADD9F</color>
 
 
+    <color name="fondo">#F8F9FB</color>
+    <color name="fondosecundario">#FFFFFFFF</color>
+    <color name="textonormal">#FF000000</color>
+    <color name="textosub">#7E8B97</color>
+
+
 </resources>
