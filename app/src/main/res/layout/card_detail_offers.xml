@@ -9,6 +9,15 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
+    <ImageView
+        android:id="@+id/card_offers_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_margin="8dp"
+        android:elevation="10dp"
+        android:src="@drawable/card_detail_heart" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,27 +25,26 @@
         android:padding="16dp">
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/card_offers_detail_limited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limited_offer"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_background"
-                android:padding="8dp">
-
-                <TextView
-                    android:id="@+id/card_offers_detail_limited"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/limited_offer"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
 
         </LinearLayout>
