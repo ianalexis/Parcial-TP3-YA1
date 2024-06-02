@@ -46,6 +46,7 @@ class ExploreFragment : Fragment() {
         flightButton.setOnClickListener {
             findNavController().navigate(R.id.action_explore_to_flightFragment)
         }
+
         return this.view1
     }
 
