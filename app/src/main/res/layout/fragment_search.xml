@@ -25,28 +25,25 @@
 
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/toggleButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:singleSelection="true"
-                >
-                <Button
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/search_fragment_btnOneWay"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/one_way"
-                    style="@style/Widget.Material3.Button.ElevatedButton"
-                    android:textSize="30sp"
-                    android:backgroundTint="@color/grisclaro"
-                    />
-                <Button
-                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/search_fragment_btnRoundTrip"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/round_trip"
-                    android:textSize="30sp"
-                    android:backgroundTint="@color/grisclaro"
-                    />
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -97,8 +94,7 @@
                     android:id="@+id/fragment_search_selectDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-                   />
+                    android:inputType="date" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,26 +106,27 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/fragment_search_selectAdultLayout"
-                    android:layout_width="160dp"
+                    android:layout_width="0dp"
                     android:layout_height="57dp"
+                    android:layout_weight="1"
                     app:startIconDrawable="@drawable/group_24px"
                     android:hint="@string/passengers"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                  >
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fragment_search_selectAdult"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        />
+                        android:inputType="number"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/fragment_search_selectCategoryLayout"
-                    android:layout_width="160dp"
+                    android:layout_width="0dp"
                     android:layout_height="57dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
                     app:startIconDrawable="@drawable/thumb_up_24px"
                     android:hint="@string/string_class"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
@@ -138,8 +135,7 @@
                         android:id="@+id/fragment_search_selectCategory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
-                        />
+                        android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -161,13 +157,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Offers"
+        android:textSize="20sp"
+        android:textStyle="bold"
         >
     </TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_search_rv"
-        android:layout_width="match_parent"
-        android:layout_height="158dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>
