@@ -47,7 +47,6 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.androidx.preference.ktx)
 
-
     implementation(libs.androidx.material3)
     implementation(libs.material)
     implementation(libs.retrofit)
@@ -56,10 +55,8 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.google.material)
 
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.material)
-
 }

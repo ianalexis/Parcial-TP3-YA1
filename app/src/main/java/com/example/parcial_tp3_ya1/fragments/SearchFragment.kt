@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,12 +16,15 @@ import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.adapters.OffersAdapter
 
 import com.example.parcial_tp3_ya1.providers.OffersProvider
+import com.google.android.material.textfield.TextInputLayout
 
 class SearchFragment : Fragment() {
 
     lateinit var view1 : View
     lateinit var offersRv: RecyclerView
     lateinit var searchButton : Button
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
@@ -35,6 +39,7 @@ class SearchFragment : Fragment() {
          this.view1 = inflater.inflate(R.layout.fragment_search, container, false)
          this.offersRv = view1.findViewById(R.id.fragment_search_rv)
          this.searchButton = view1.findViewById(R.id.fragment_search_btnSearch)
+
         searchButton.setOnClickListener {
             val action = SearchFragmentDirections.actionSearchToFlightFragment()
             findNavController().navigate(action)
