@@ -21,26 +21,53 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_search_selectDeparture"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:ems="10"
-                android:hint="Select Departure"
-                android:inputType="text" />
 
-            <EditText
-                android:id="@+id/fragment_search_selectArrival"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:ems="10"
-                android:hint="Select Arrival"
-                android:inputType="text" />
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/flight_takeoff_24px"
+                android:hint="From">
+
+                <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_search_selectArrival"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/flight_land_24px"
+                android:hint="To">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_search_selectDateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/calendar_today_24px"
+                android:hint="Departure Date">
+
+                <EditText
+                    android:id="@+id/fragment_search_selectDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+
+                   />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,25 +99,16 @@
                     android:layout_weight="1" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/fragment_search_selectDate"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:ems="10"
-                android:hint="Select Date"
-                android:inputType="date" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragment_search_btnSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="15dp"
-                android:text="Button" />
+                android:backgroundTint="@color/naranja"
+                android:text="@string/string_search"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
 
