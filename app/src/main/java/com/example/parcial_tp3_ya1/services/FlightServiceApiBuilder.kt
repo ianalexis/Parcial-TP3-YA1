@@ -1,4 +1,4 @@
-package com.example.parcial_tp3_ya1.service
+package com.example.parcial_tp3_ya1.services
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

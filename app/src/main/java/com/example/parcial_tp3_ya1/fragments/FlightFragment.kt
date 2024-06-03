@@ -13,8 +13,7 @@ import com.example.parcial_tp3_ya1.R
 import com.example.parcial_tp3_ya1.adapters.FlightAdapter
 import com.example.parcial_tp3_ya1.data.Airport
 import com.example.parcial_tp3_ya1.entities.FlightEntitie
-import com.example.parcial_tp3_ya1.service.FlightServiceApiBuilder
-import androidx.navigation.fragment.findNavController
+import com.example.parcial_tp3_ya1.services.FlightServiceApiBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
