@@ -23,21 +23,35 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center">
 
+<!--     Se hace un boton con el texto adentro y el icono para seguir convenciones de Material Design-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/flight_button"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
-            android:tint="@color/fondo"
-            app:icon="@drawable/plane"
-            app:backgroundTint="@color/violeta"
-            app:cornerRadius="10dp"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/flight"
-            android:textColor="@color/textonormal"
-            />
+            android:textColor="@color/fondo"
+            app:icon="@drawable/plane"
+            app:iconGravity="textStart"
+            app:iconTint="@color/fondo"
+            app:backgroundTint="@color/violeta"
+            app:cornerRadius="10dp"/>
+
+<!--        Boton con el icono centrado no funcional.-->
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/flight_button"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:tint="@color/fondo"-->
+<!--            app:icon="@drawable/plane"-->
+<!--            app:backgroundTint="@color/violeta"-->
+<!--            app:cornerRadius="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/flight"-->
+<!--            android:textColor="@color/textonormal"-->
+<!--            />-->
 
     </LinearLayout>
 
