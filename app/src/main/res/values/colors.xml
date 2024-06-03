@@ -15,9 +15,12 @@
 
     <color name="fondosecundario">#F8F9FB</color>
     <color name="fondoterciario">#F8F9FB</color>
+    <color name="fondoequiqueta">#F8F9FB</color>
     <color name="fondo">#FFFFFFFF</color>
     <color name="textonormal">#191919</color>
     <color name="textosub">#7E8B97</color>
+    <color name="textoetiqueta">#4D5760</color>
+
 
 
 </resources>

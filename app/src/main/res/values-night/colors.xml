@@ -9,7 +9,9 @@
 
     <color name="fondosecundario">#191919</color>
     <color name="fondoterciario">#E6000000</color>
+    <color name="fondoequiqueta">#393939</color>
     <color name="fondo">#FF000000</color>
     <color name="textosub">#9F9F9F</color>
     <color name="textonormal">#F8F9FB</color>
+    <color name="textoetiqueta">#9C9C9C</color>
 </resources>

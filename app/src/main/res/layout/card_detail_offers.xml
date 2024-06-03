@@ -10,12 +10,13 @@
 
     <ImageView
         android:id="@+id/card_offers_heart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_gravity="end|top"
-        android:layout_margin="8dp"
+        android:layout_margin="20dp"
         android:elevation="10dp"
-        android:src="@drawable/card_detail_heart" />
+        android:src="@drawable/card_detail_heart_empty"
+        android:onClick="toggleHeart" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,6 +39,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
