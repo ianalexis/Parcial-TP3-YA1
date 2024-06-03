@@ -23,12 +23,12 @@ Domiciliaria en Grupo
 
 ## Integrantes:
 
-| Apellido  | Nombres       |
-| --------- | ------------- |
-| Bassi     | Ian Alexis    |
-| Contreras | Aldana Belen  |
-| Cristillo | Franco Lionel |
-| Lerman    | Matias Iair   |
+| Apellido  | Nombres       |Github|
+| --------- | ------------- |------|
+| Bassi     | Ian Alexis    |ianalexis|
+| Contreras | Aldana Belen  |morocontreras|
+| Cristillo | Franco Leonel |FRLCR|
+| Lerman    | Matias Iair   |MatiLerman|
 
 ## Introducción
 
