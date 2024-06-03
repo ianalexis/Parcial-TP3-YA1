@@ -132,6 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Book Now"
+                android:textColor="@color/fondo"
                 app:backgroundTint="@color/naranja" />
 
         </LinearLayout>
