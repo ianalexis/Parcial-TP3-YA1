@@ -12,14 +12,18 @@ import com.example.parcial_tp3_ya1.fragments.ExploreFragmentDirections
 
 class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
     private var view: View
-    // val button: Button = view.findViewById(R.id.item_perrito_cell_button)
-
     val city = view.findViewById<TextView>(R.id.card_maindest_city)
     val image = view.findViewById<ImageView>(R.id.card_maindest_image)
     val price = view.findViewById<TextView>(R.id.card_maindest_price)
+    private val favorite: ImageView = view.findViewById(R.id.card_maindest_favorite)
+
     init {
         this.view = view
+        favorite.setOnClickListener {
+            toggleHeart(it)
+        }
     }
+
     fun render(model : DestinationEntitie){
         city.text = model.city
         Glide.with(view).load(model.image).into(image)
@@ -31,5 +35,15 @@ class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
         }
     }
 
-
+    fun toggleHeart(view: View) {
+        val favorite = view as ImageView
+        val tag = favorite.tag
+        if (tag == null || tag == R.drawable.card_detail_heart_empty_white) {
+            favorite.setImageResource(R.drawable.card_detail_heart_white)
+            favorite.tag = R.drawable.card_detail_heart
+        } else {
+            favorite.setImageResource(R.drawable.card_detail_heart_empty_white)
+            favorite.tag = R.drawable.card_detail_heart_empty
+        }
+    }
 }

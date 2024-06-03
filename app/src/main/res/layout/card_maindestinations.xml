@@ -71,7 +71,8 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/card_detail_heart_empty" />
+            android:src="@drawable/card_detail_heart_empty_white"
+            android:onClick="toggleHeart" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
