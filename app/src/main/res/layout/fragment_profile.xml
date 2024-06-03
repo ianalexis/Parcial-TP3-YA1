@@ -71,75 +71,95 @@
                     android:textColor="@color/textosub"
                     />
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingTop="16dp">
+                    android:id="@+id/fragment_profile_payment_btn"
+                    style="@style/ProfileOptionStyle"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@color/celesteclaro"
+                        android:src="@drawable/icon_payment_details" />
 
                     <TextView
-                        android:id="@+id/fragment_profile_payment_btn"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_payment"
-                        android:drawablePadding="10dp"
-                        android:text="@string/profile_payment"
-                        android:background="?attr/selectableItemBackground"
-                        android:gravity="start|center_vertical"
-                        android:padding="16dp"
-                        android:textColor="@color/textonormal"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:padding="4dp"
+                        android:text="@string/profile_payment" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_profile_referralcode_btn"
+                    style="@style/ProfileOptionStyle"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@color/celesteclaro"
+                        android:src="@drawable/icon_referral_code" />
 
                     <TextView
-                        android:id="@+id/fragment_profile_referralcode_btn"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_referral_code"
-                        android:drawablePadding="10dp"
-                        android:text="@string/profile_referral_code"
-                        android:background="?attr/selectableItemBackground"
-                        android:gravity="start|center_vertical"
-                        android:padding="16dp"
-                        android:textColor="@color/textonormal"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:padding="4dp"
+                        android:text="@string/profile_referral_code" />
 
                     <TextView
-                        android:id="@+id/fragment_profile_settings_btn"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_settings"
-                        android:drawablePadding="10dp"
-                        android:text="@string/profile_settings"
-                        android:background="?attr/selectableItemBackground"
-                        android:gravity="start|center_vertical"
-                        android:padding="16dp"
-                        android:textColor="@color/textonormal"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:layout_marginStart="8dp"
+                        android:padding="4dp"
+                        android:background="@color/verde"
+                        android:textColor="@color/fondo"
+                        android:text="new" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_profile_settings_btn"
+                    style="@style/ProfileOptionStyle"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@color/celesteclaro"
+
+                        android:src="@drawable/icon_settings" />
 
                     <TextView
-                        android:id="@+id/fragment_profile_logout_btn"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_logout"
-                        android:drawablePadding="17dp"
-                        android:text="@string/profile_logout"
-                        android:background="?attr/selectableItemBackground"
-                        android:gravity="start|center_vertical"
-                        android:padding="16dp"
-                        android:textColor="@color/textonormal"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:backgroundTint="@android:color/transparent" />
+                        android:padding="4dp"
+                        android:text="@string/profile_settings" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/fragment_profile_logout_btn"
+                    style="@style/ProfileOptionStyle"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@color/celesteclaro"
+
+                        android:src="@drawable/ic_logout" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+
+                        android:text="@string/profile_logout" />
                 </LinearLayout>
 
             </LinearLayout>
