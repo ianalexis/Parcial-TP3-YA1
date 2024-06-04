@@ -20,123 +20,126 @@
             android:scaleType="centerCrop"
             tools:src="@tools:sample/backgrounds/scenic" />
 
-    </RelativeLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_destdetail_img"
-        android:layout_marginTop="-10dp"
-        android:layout_marginBottom="0dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-    >
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_below="@id/fragment_destdetail_img"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="0dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            >
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView
-                    android:id="@+id/fragment_destdetail_txtCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="City"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textonormal" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/fragment_destdetail_txtCity"
-                    android:layout_alignTop="@id/fragment_destdetail_txtCity"
-                    android:layout_marginStart="8dp"
-                    app:cardCornerRadius="6dp"
-                    app:cardBackgroundColor="@color/fondoequiqueta"
-                    >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/fragment_destdetail_txtCode"
+                        android:id="@+id/fragment_destdetail_txtCity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Código reducido"
-                        android:textSize="12sp"
-                        android:padding="4dp"
+                        android:text="City"
+                        android:textSize="30sp"
                         android:textStyle="bold"
-                        android:textColor="@color/textoetiqueta"
+                        android:textColor="@color/textonormal" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/fragment_destdetail_txtCity"
+                        android:layout_alignTop="@id/fragment_destdetail_txtCity"
+                        android:layout_marginStart="8dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardBackgroundColor="@color/fondoequiqueta"
+                        >
+
+                        <TextView
+                            android:id="@+id/fragment_destdetail_txtCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Código reducido"
+                            android:textSize="12sp"
+                            android:padding="4dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textoetiqueta"
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/fragment_destdetail_txtCountry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Country"
+                        android:layout_below="@id/fragment_destdetail_txtCity"
+                        android:textColor="@color/textosub"
                         />
-                </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/fragment_destdetail_txtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price"
+                        android:textSize="30sp"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/textonormal"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
 
                 <TextView
-                    android:id="@+id/fragment_destdetail_txtCountry"
+                    android:id="@+id/fragment_destdetail_txtOverview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Country"
-                    android:layout_below="@id/fragment_destdetail_txtCity"
-                    android:textColor="@color/textosub"
+                    android:text="Overview"
+                    android:textStyle="bold"
+                    android:textColor="@color/textonormal"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/fragment_destdetail_txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DescOverview"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/textonormal"
                     />
 
                 <TextView
-                    android:id="@+id/fragment_destdetail_txtPrice"
+                    android:id="@+id/fragment_destdetail_txtPhotos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Price"
-                    android:textSize="30sp"
-                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/fotos"
+                    android:textStyle="bold"
                     android:textColor="@color/textonormal"
-                    android:textStyle="bold"/>
+                    />
 
-            </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fragment_destdetail_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp" />
 
-            <TextView
-                android:id="@+id/fragment_destdetail_txtOverview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Overview"
-                android:textStyle="bold"
-                android:textColor="@color/textonormal"
-                android:layout_marginTop="8dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fragment_destdetail_btnBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/desdetail_booknow"
+                    android:textColor="@color/fondo"
+                    app:backgroundTint="@color/naranja"
+                    app:cornerRadius="8dp"/>
 
-            <TextView
-                android:id="@+id/fragment_destdetail_txtDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="DescOverview"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/textonormal"
-                />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/fragment_destdetail_txtPhotos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@string/fotos"
-                android:textStyle="bold"
-                android:textColor="@color/textonormal"
-                />
+        </androidx.cardview.widget.CardView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/fragment_destdetail_rv"
-                android:layout_width="match_parent"
-                android:layout_height="145dp" />
+    </RelativeLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/fragment_destdetail_btnBook"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Book Now"
-                android:textColor="@color/fondo"
-                app:backgroundTint="@color/naranja" />
 
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

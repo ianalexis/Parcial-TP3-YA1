@@ -51,5 +51,7 @@
     <string name="round_trip">Round Trip</string>
     <string name="one_way">One Way</string>
     <string name="fotos">Photos</string>
+    <string name="profile_new">NEW</string>
+    <string name="desdetail_booknow">Book Now</string>
 
 </resources>
