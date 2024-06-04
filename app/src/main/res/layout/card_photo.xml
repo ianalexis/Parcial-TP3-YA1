@@ -12,7 +12,6 @@
     android:focusableInTouchMode="true"
     app:cardCornerRadius="4dp">
 
-
     <ImageView
         android:id="@+id/card_photo_img"
         android:layout_width="match_parent"

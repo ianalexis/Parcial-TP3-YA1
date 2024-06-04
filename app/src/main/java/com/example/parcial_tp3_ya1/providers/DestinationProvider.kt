@@ -3,9 +3,7 @@ package com.example.parcial_tp3_ya1.providers
 import com.example.parcial_tp3_ya1.entities.DestinationEntitie
 
 class DestinationProvider {
-
     companion object {
-
         val destinationEntitieLists = listOf<DestinationEntitie>(
             DestinationEntitie(
                 "Boracay",

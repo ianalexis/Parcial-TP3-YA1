@@ -23,8 +23,6 @@ class FlightHolder (view: View): RecyclerView.ViewHolder(view) {
     val logo = view.findViewById<ImageView>(R.id.card_search_img_airline_logo)
     val clase = view.findViewById<TextView>(R.id.card_search_class)
     val precio = view.findViewById<TextView>(R.id.card_search_txt_price)
-
-
     init {
         this.view = view
     }
@@ -38,7 +36,5 @@ class FlightHolder (view: View): RecyclerView.ViewHolder(view) {
         Glide.with(view).load(model.logo).into(logo)
         clase.text = model.clase
         precio.text = model.precio
-
-      
     }
 }

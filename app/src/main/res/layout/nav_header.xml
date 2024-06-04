@@ -49,8 +49,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/textonormal"
                 android:textSize="20sp" />
-
-
         </LinearLayout>
     </LinearLayout>
 
