@@ -45,7 +45,7 @@ class ExploreFragment : Fragment() {
         this.button = view1.findViewById(R.id.flight_button)
         val flightButton: Button = view1.findViewById(R.id.flight_button)
         flightButton.setOnClickListener {
-            findNavController().navigate(R.id.action_explore_to_flightFragment)
+            findNavController().navigate(R.id.action_explore_to_searchFragment)
         }
         val seeAllOffers: TextView = view1.findViewById(R.id.see_all_button_offers)
         seeAllOffers.setOnClickListener {

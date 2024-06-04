@@ -11,8 +11,8 @@
         android:label="FlickleFligth"
         tools:layout="@layout/fragment_explore" >
         <action
-            android:id="@+id/action_explore_to_flightFragment"
-            app:destination="@id/flightFragment" />
+            android:id="@+id/action_explore_to_searchFragment"
+            app:destination="@id/search" />
         <action
             android:id="@+id/action_explore_to_destinationDetail"
             app:destination="@id/destinationDetail" />
