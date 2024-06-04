@@ -12,4 +12,5 @@ class ProfileProvider {
         "https://www.figma.com/file/3fpcDil0eOVslxFzD2S5hP/image/10e6a9d0abe89c64dc7ee69818e36d16222e78ec"
         )
     }
+
 }

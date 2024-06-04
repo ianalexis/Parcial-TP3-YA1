@@ -56,7 +56,6 @@ class FlightFragment : Fragment() {
             flightRv.adapter = flightAdapter
         }
     }
-
     private suspend fun loadVuelos() : List<FlightEntitie> {
         val service = FlightServiceApiBuilder.create()
         val listaVuelos = arrayListOf<FlightEntitie>()

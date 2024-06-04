@@ -23,8 +23,6 @@ class ProfileFragment : Fragment() {
     lateinit var imgProfile : ImageView
     lateinit var imgBackground : ImageView
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,7 +42,6 @@ class ProfileFragment : Fragment() {
         imgBackground = vista.findViewById(R.id.fragment_profile_background_image)
         return vista
     }
-
     override fun onStart() {
         super.onStart()
         val profile = ProfileProvider.profileEntitie
@@ -54,5 +51,4 @@ class ProfileFragment : Fragment() {
         Glide.with(vista).load(profile.profileimage).into(imgProfile)
         Glide.with(vista).load(profile.backgroundimage).into(imgBackground)
     }
-
 }

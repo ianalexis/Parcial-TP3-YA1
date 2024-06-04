@@ -16,14 +16,12 @@ class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
     val image = view.findViewById<ImageView>(R.id.card_maindest_image)
     val price = view.findViewById<TextView>(R.id.card_maindest_price)
     private val favorite: ImageView = view.findViewById(R.id.card_maindest_favorite)
-
     init {
         this.view = view
         favorite.setOnClickListener {
             toggleHeart(it)
         }
     }
-
     fun render(model : DestinationEntitie){
         city.text = model.city
         Glide.with(view).load(model.image).into(image)
@@ -34,7 +32,6 @@ class MainDestinationHolder (view:View):RecyclerView.ViewHolder(view) {
             view.findNavController().navigate(action)
         }
     }
-
     fun toggleHeart(view: View) {
         val favorite = view as ImageView
         val tag = favorite.tag

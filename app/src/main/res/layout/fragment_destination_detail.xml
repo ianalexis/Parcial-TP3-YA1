@@ -44,7 +44,7 @@
                         android:id="@+id/fragment_destdetail_txtCity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="City"
+                        android:text="@string/city"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         android:textColor="@color/textonormal" />
@@ -63,7 +63,7 @@
                             android:id="@+id/fragment_destdetail_txtCode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Código reducido"
+                            android:text="@string/c_digo_reducido"
                             android:textSize="12sp"
                             android:padding="4dp"
                             android:textStyle="bold"
@@ -75,7 +75,7 @@
                         android:id="@+id/fragment_destdetail_txtCountry"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Country"
+                        android:text="@string/country"
                         android:layout_below="@id/fragment_destdetail_txtCity"
                         android:textColor="@color/textosub"
                         />
@@ -84,7 +84,7 @@
                         android:id="@+id/fragment_destdetail_txtPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price"
+                        android:text="@string/price"
                         android:textSize="30sp"
                         android:layout_alignParentRight="true"
                         android:textColor="@color/textonormal"
@@ -96,7 +96,7 @@
                     android:id="@+id/fragment_destdetail_txtOverview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Overview"
+                    android:text="@string/overview"
                     android:textStyle="bold"
                     android:textColor="@color/textonormal"
                     android:layout_marginTop="8dp"/>
@@ -105,7 +105,7 @@
                     android:id="@+id/fragment_destdetail_txtDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="DescOverview"
+                    android:text="@string/descoverview"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/textonormal"
                     />
@@ -139,7 +139,4 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-
-
-
 </LinearLayout>

@@ -53,5 +53,10 @@
     <string name="fotos">Photos</string>
     <string name="profile_new">NEW</string>
     <string name="desdetail_booknow">Book Now</string>
+    <string name="city">City</string>
+    <string name="c_digo_reducido">Código reducido</string>
+    <string name="country">Country</string>
+    <string name="overview">Overview</string>
+    <string name="descoverview">DescOverview</string>
 
 </resources>

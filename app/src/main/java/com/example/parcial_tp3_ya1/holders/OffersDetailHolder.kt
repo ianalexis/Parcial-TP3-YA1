@@ -15,7 +15,6 @@ class OffersDetailHolder (view: View): RecyclerView.ViewHolder(view){
     val title = view.findViewById<TextView>(R.id.card_detail_offers_title)
     val desc = view.findViewById<TextView>(R.id.card_detail_offers_desc)
     private val heart: ImageView = view.findViewById(R.id.card_offers_heart)
-
     init {
         this.view = view
         heart.setOnClickListener {

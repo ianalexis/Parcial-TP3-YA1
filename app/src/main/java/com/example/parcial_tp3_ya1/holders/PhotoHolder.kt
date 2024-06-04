@@ -11,7 +11,6 @@ class PhotoHolder (view : View): RecyclerView.ViewHolder(view){
 
     val image = view.findViewById<ImageView>(R.id.card_photo_img)
 
-
     init {
         this.view = view
     }

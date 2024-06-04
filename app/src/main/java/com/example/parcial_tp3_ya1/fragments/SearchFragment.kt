@@ -33,7 +33,6 @@ class SearchFragment : Fragment() {
     lateinit var toInput: TextInputEditText
     lateinit var dateInput: EditText
     lateinit var passengersInput: TextInputEditText
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
